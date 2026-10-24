@@ -2,7 +2,7 @@ const CACHE_NAME = 'newspaper-hub-v1';
 const ASSETS_TO_CACHE = [
   './index.html',
   './manifest.json',
-  './icon.jpg',
+  './icon.png',
   'https://cdn.tailwindcss.com',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://fonts.googleapis.com/css2?family=Chomsky&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,700&family=Special+Elite&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&display=swap'
