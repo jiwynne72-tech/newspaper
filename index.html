@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>READ ALL ABOUT IT! - Vintage Newspaper & Classroom Speaking Hub</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- FontAwesome for Vintage Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Vintage Serif & Gothic Header Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chomsky&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,700&family=Special+Elite&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#f2ebd9',
+            'paper-dark': '#e3d7bf',
+            'paper-accent': '#d5c4a1',
+            ink: '#1c1917',
+            'ink-light': '#44403c',
+            sepia: '#78350f',
+            vintage: '#854d0e',
+            aged: '#292524'
+          },
+          fontFamily: {
+            masthead: ['Chomsky', 'Playfair Display', 'Georgia', 'serif'],
+            headline: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Newsreader', 'Georgia', 'serif'],
+            typewriter: ['Courier Prime', 'monospace'],
+            stamp: ['Special Elite', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Texture & Vintage Visual Enhancements */
+    body {
+      background-color: #1a1816;
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(20, 18, 15, 0.7), rgba(10, 9, 8, 0.95)),
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.06"/></svg>');
+    }
+
+    .newspaper-page {
+      background-color: #f3edd9;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(133, 77, 14, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(120, 53, 15, 0.08) 0%, transparent 50%),
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.12"/></svg>');
+      box-shadow: 0 0 35px rgba(0,0,0,0.6), inset 0 0 60px rgba(120, 53, 15, 0.15);
+      border: 1px solid #d4c5a9;
+    }
+
+    /* Halftone Effect for Vintage Photo Aesthetic */
+    .halftone-img-container {
+      position: relative;
+      background: #e3d7bf;
+      border: 3px double #292524;
+      padding: 4px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .vintage-photo-filter {
+      filter: sepia(0.35) contrast(1.15) grayscale(0.25);
+      transition: filter 0.3s ease;
+    }
+
+    .halftone-overlay {
+      position: absolute;
+      inset: 4px;
+      background: radial-gradient(circle, #000 20%, transparent 20%);
+      background-size: 4px 4px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    /* Drop Cap */
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.6rem;
+      float: left;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 2px;
+      font-weight: 900;
+      color: #1c1917;
+    }
+
+    /* Multi-column layout with vintage lines */
+    .newspaper-columns {
+      column-count: 1;
+      column-gap: 2rem;
+      column-rule: 1px solid #b3a58d;
+    }
+    @media (min-width: 768px) {
+      .newspaper-columns {
+        column-count: 2;
+      }
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .newspaper-page {
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        background: white !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+    }
+
+    /* Custom Scrollbar for Vintage Feel */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e3d7bf;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #78350f;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="text-ink font-body min-h-screen py-4 px-2 sm:px-6 md:py-8">
+
+  <!-- TOP CLASSROOM TOOLBAR (NO-PRINT) -->
+  <header class="max-w-5xl mx-auto mb-6 bg-paper-dark border-2 border-aged p-3 sm:p-4 rounded-lg shadow-xl no-print flex flex-wrap items-center justify-between gap-4">
+    
+    <!-- Title & Brand -->
+    <div class="flex items-center gap-3">
+      <div class="bg-aged text-paper w-10 h-10 rounded flex items-center justify-center text-xl font-bold font-headline">
+        <i class="fa-solid font-bold fa-newspaper"></i>
+      </div>
+      <div>
+        <h1 class="font-headline font-black text-lg sm:text-xl tracking-tight leading-tight text-ink">READ ALL ABOUT IT!</h1>
+        <p class="text-xs font-typewriter text-sepia font-bold">ESL & Classroom Speaking Newspaper Hub</p>
+      </div>
+    </div>
+
+    <!-- Controls Row -->
+    <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+      
+      <!-- Reading Level Switcher -->
+      <div class="flex items-center bg-paper border-2 border-aged rounded p-0.5 shadow">
+        <button id="level-btn-standard" onclick="setReadingLevel('standard')" class="px-2.5 py-1 text-xs font-typewriter font-bold rounded transition-all bg-sepia text-paper">
+          Standard
+        </button>
+        <button id="level-btn-easy" onclick="setReadingLevel('easy')" class="px-2.5 py-1 text-xs font-typewriter font-bold text-ink-light hover:text-ink rounded transition-all">
+          Easy
+        </button>
+      </div>
+
+      <!-- Random Article Button -->
+      <button id="btn-random" onclick="loadRandomStory()" class="px-3 py-2 bg-sepia hover:bg-amber-900 text-paper font-typewriter text-xs sm:text-sm font-bold rounded border border-aged transition-all flex items-center gap-2 shadow hover:scale-105 active:scale-95">
+        <i class="fa-solid fa-dice"></i>
+        <span>EXTRA! Extra! (Random)</span>
+      </button>
+
+      <!-- Story Selector Dropdown -->
+      <div class="relative">
+        <select id="story-select" onchange="loadSelectedStory(this.value)" class="bg-paper border-2 border-aged text-ink text-xs sm:text-sm font-typewriter py-2 px-3 rounded shadow focus:outline-none cursor-pointer max-w-[180px] sm:max-w-[220px]">
+          <!-- Dynamic options filled via JS -->
+        </select>
+      </div>
+
+      <!-- Classroom Timer Tool -->
+      <div class="flex items-center bg-paper border border-aged px-2 py-1 rounded text-xs font-typewriter gap-2">
+        <i class="fa-solid fa-stopwatch text-sepia"></i>
+        <span id="timer-display" class="font-bold w-12 text-center text-sm">02:00</span>
+        <button onclick="toggleTimer()" id="timer-btn" class="text-xs bg-aged text-paper px-2 py-0.5 rounded hover:bg-sepia">Start</button>
+        <button onclick="resetTimer()" class="text-xs text-ink-light hover:text-ink"><i class="fa-solid fa-rotate-right"></i></button>
+      </div>
+
+      <!-- Print/Clipping Button -->
+      <button onclick="window.print()" class="p-2 bg-paper hover:bg-paper-accent text-ink rounded border border-aged text-xs font-typewriter flex items-center gap-1" title="Print Worksheet / Clipping">
+        <i class="fa-solid fa-print"></i>
+        <span class="hidden sm:inline">Print Worksheet</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MAIN NEWSPAPER CONTAINER -->
+  <main class="max-w-5xl mx-auto newspaper-page p-4 sm:p-8 md:p-12 transition-opacity duration-300" id="paper-container">
+
+    <!-- NEWSPAPER MASTHEAD / HEADER -->
+    <header class="border-b-4 border-double border-aged pb-4 mb-6 text-center relative">
+      
+      <div class="flex justify-between items-center text-xs font-typewriter border-b border-aged pb-1 mb-3 px-1 text-ink-light">
+        <span>VOL. CXXIV NO. 42,910</span>
+        <span class="font-bold tracking-widest uppercase" id="paper-edition">DAILY CLASSROOM EDITION — HISTORICAL REVEAL</span>
+        <span id="paper-date">OCTOBER 23, 1923</span>
+      </div>
+
+      <!-- Main Banner Title -->
+      <div class="py-2 my-1 border-y-2 border-aged">
+        <h1 class="font-headline font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter text-ink leading-none">
+          THE DAILY CHRONICLE
+        </h1>
+        <p class="font-typewriter text-xs sm:text-sm tracking-widest text-sepia uppercase mt-1">
+          "The World's Most Unbelievable True Stories — Faithfully Reported & Verified"
+        </p>
+      </div>
+
+      <!-- Price & Weather Ribbon -->
+      <div class="flex justify-between items-center text-[11px] font-typewriter pt-1 px-2 italic text-ink-light border-t border-aged">
+        <span>WEATHER: Peculiar Forecasts Ahead</span>
+        <span>PRICE: TWO CENTS IN CITY / THREE CENTS ELSEWHERE</span>
+      </div>
+    </header>
+
+    <!-- ARTICLE SECTION -->
+    <article class="mb-10">
+      
+      <!-- Headline & Subdeck -->
+      <div class="text-center max-w-4xl mx-auto mb-6">
+        <h2 id="article-headline" class="font-headline font-black text-2xl sm:text-4xl md:text-5xl leading-tight text-ink uppercase mb-2">
+          <!-- Dynamic Headline -->
+        </h2>
+        <p id="article-subdeck" class="font-headline italic text-lg sm:text-xl text-ink-light max-w-2xl mx-auto">
+          <!-- Dynamic Subhead -->
+        </p>
+        
+        <!-- Byline & Location -->
+        <div class="mt-4 flex items-center justify-center gap-4 text-xs font-typewriter border-y border-stone-400/60 py-1 max-w-md mx-auto">
+          <span id="article-location" class="font-bold uppercase">LONDON, ENG.</span>
+          <span>•</span>
+          <span>By Special Dispatch to The Chronicle</span>
+          <span>•</span>
+          <button onclick="speakArticle()" id="tts-btn" class="no-print bg-sepia text-paper px-2 py-0.5 rounded text-[11px] hover:bg-aged transition flex items-center gap-1">
+            <i class="fa-solid fa-volume-high"></i>
+            <span id="tts-label">Read Aloud</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Photo & Story Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 my-6 items-start">
+        
+        <!-- Vintage Graphic Frame -->
+        <div class="md:col-span-5 flex flex-col items-center">
+          <div class="halftone-img-container bg-paper-dark w-full max-w-md">
+            <div id="photo-frame" class="relative overflow-hidden aspect-4/3 flex items-center justify-center bg-stone-300">
+              
+              <!-- Direct img tag loading local image file -->
+              <img id="article-image" 
+                   src="" 
+                   alt="Historical Story Photo" 
+                   class="w-full h-full object-cover vintage-photo-filter transition-opacity duration-300" 
+                   onerror="handleImageError(this)">
+              
+              <div class="halftone-overlay" id="halftone-overlay-el"></div>
+            </div>
+            
+            <!-- Caption -->
+            <p id="article-caption" class="font-typewriter text-xs p-2 text-center text-ink-light border-t border-aged bg-paper italic">
+              <!-- Caption text -->
+            </p>
+          </div>
+
+          <!-- Quick Fact Box -->
+          <div class="w-full mt-4 bg-paper-dark p-3 border-2 border-dashed border-aged rounded text-xs font-typewriter">
+            <span class="font-bold text-sepia uppercase block mb-1 border-b border-aged pb-1">
+              <i class="fa-solid fa-square-check mr-1"></i> Historical Fact Check:
+            </span>
+            <p id="article-factcheck" class="italic text-ink-light">
+              <!-- Fact check line -->
+            </p>
+          </div>
+        </div>
+
+        <!-- Multi-Column Body Text -->
+        <div class="md:col-span-7 font-body text-base sm:text-lg leading-relaxed text-ink text-justify">
+          <div id="article-body" class="newspaper-columns space-y-4">
+            <!-- Article Paragraphs -->
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- CLASSROOM & SPEAKING SECTION -->
+    <section class="mt-12 pt-8 border-t-4 border-double border-aged no-print">
+      
+      <!-- Section Stamp / Header -->
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+          <span class="bg-sepia text-paper font-stamp px-3 py-1 text-sm rounded shadow rotate-[-1deg]">
+            CLASSROOM SPEAKING LAB
+          </span>
+          <h3 class="font-headline font-bold text-xl text-ink">Interactive Discussion & Vocabulary</h3>
+        </div>
+        <span class="text-xs font-typewriter text-sepia">Target Skill: ESL Speaking & Critical Thought</span>
+      </div>
+
+      <!-- Tab Navigation for Classroom Tools -->
+      <div class="flex border-b-2 border-aged gap-2 mb-6 font-typewriter text-xs sm:text-sm">
+        <button id="tab-btn-vocab" onclick="switchTab('vocab')" class="px-4 py-2 border-t-2 border-x-2 border-aged bg-paper font-bold text-sepia -mb-0.5 rounded-t">
+          <i class="fa-solid fa-book-bookmark mr-1"></i> Key Vocabulary
+        </button>
+        <button id="tab-btn-prompts" onclick="switchTab('prompts')" class="px-4 py-2 border-t-2 border-x-2 border-transparent hover:border-aged bg-paper-dark text-ink-light -mb-0.5 rounded-t">
+          <i class="fa-solid fa-comments mr-1"></i> Speaking Prompts
+        </button>
+        <button id="tab-btn-quiz" onclick="switchTab('quiz')" class="px-4 py-2 border-t-2 border-x-2 border-transparent hover:border-aged bg-paper-dark text-ink-light -mb-0.5 rounded-t">
+          <i class="fa-solid fa-circle-question mr-1"></i> Comprehension Check
+        </button>
+      </div>
+
+      <!-- TAB 1: VOCABULARY FLASHCARDS / GLOSSARY -->
+      <div id="tab-content-vocab" class="space-y-4">
+        <p class="text-xs font-typewriter text-ink-light mb-3">
+          Click on any word flashcard to reveal its definition and example sentence for discussion:
+        </p>
+        <div id="vocab-cards-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Dynamic Vocab Cards -->
+        </div>
+      </div>
+
+      <!-- TAB 2: CLASSROOM SPEAKING PROMPTS -->
+      <div id="tab-content-prompts" class="hidden space-y-4">
+        <div class="bg-paper-dark border-2 border-aged p-4 rounded-lg shadow-inner">
+          <h4 class="font-headline font-bold text-lg text-sepia mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-users"></i> Pair & Group Discussion Questions
+          </h4>
+          <p class="text-xs font-typewriter text-ink-light mb-4">
+            Instruct students to turn to a partner or divide into small groups to answer the following prompts:
+          </p>
+          <ol id="speaking-prompts-list" class="space-y-3 font-body text-base text-ink">
+            <!-- Dynamic prompts -->
+          </ol>
+        </div>
+      </div>
+
+      <!-- TAB 3: QUICK COMPREHENSION QUIZ -->
+      <div id="tab-content-quiz" class="hidden space-y-4">
+        <div class="bg-paper-dark border-2 border-aged p-4 sm:p-6 rounded-lg">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="font-headline font-bold text-lg text-ink">
+              Quick Article Comprehension
+            </h4>
+            <span id="quiz-score-badge" class="font-typewriter text-xs bg-paper border border-aged px-2 py-1 rounded">Score: 0/3</span>
+          </div>
+          
+          <div id="quiz-container" class="space-y-6">
+            <!-- Dynamic Quiz Questions -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER / ARCHIVAL STAMP -->
+    <footer class="mt-12 pt-4 border-t border-aged text-center text-xs font-typewriter text-ink-light flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div>
+        <span>Archival ID: <strong id="archive-id">HIST-1900-STORY</strong></span>
+      </div>
+      <div class="font-stamp text-sepia text-sm">
+        VERIFIED HISTORICAL ARCHIVE — "READ ALL ABOUT IT!"
+      </div>
+      <div>
+        <span>Page 1 of 1</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- PRINT ONLY WORKSHEET FOOTER -->
+  <div class="hidden print-only max-w-5xl mx-auto mt-8 p-4 border-t-2 border-black font-typewriter text-xs">
+    <h3 class="font-bold text-sm mb-2">Classroom Homework & Vocabulary Worksheet</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <p class="font-bold">Student Name: _______________________</p>
+        <p class="mt-2">1. Define two new words from today's story in your own words.</p>
+        <p class="mt-8">2. Write a 3-sentence summary of the news story.</p>
+      </div>
+      <div>
+        <p class="font-bold">Date: _______________</p>
+        <p class="mt-2">3. What was the most surprising historical fact in this story and why?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="max-w-5xl mx-auto mt-6 pt-2 text-center text-[11px] font-typewriter text-stone-400 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 no-print">
+    <span>©2026 james wynne</span>
+    <span class="hidden sm:inline">•</span>
+    <a href="https://jwynne.wixsite.com/english" target="_blank" rel="noopener noreferrer" class="hover:underline text-stone-300">website</a>
+    <span class="hidden sm:inline">•</span>
+    <a href="mailto:james_wynne@hotmail.com" class="hover:underline text-stone-300">email</a>
+  </footer>
+
+  <script>
+    /* ==========================================================================
+       DATABASE OF 20 HISTORICAL NEWSPAPER STORIES (STANDARD & EASY VERSIONS)
+       ========================================================================== */
+    const STORIES = [
+      {
+        id: "molasses-1919",
+        title: "The Great Molasses Flood of 1919",
+        location: "BOSTON, USA",
+        date: "JANUARY 15, 1919",
+        photo: "story-great-molasses.jpg",
+        caption: "Rescuers navigate molasses-covered debris on Commercial Street following the sudden tank collapse.",
+        factCheck: "True. 21 people lost their lives and Boston smelled of molasses on warm summer days for decades.",
+        svgFallbackTitle: "THE GREAT MOLASSES FLOOD",
+        standard: {
+          headline: "BOSTON DROWNED IN TWO-STORY WAVE OF SWEET STICKY SYRUP!",
+          subdeck: "Ruptured 2.3 Million Gallon Industrial Tank Sends 35mph Tidal Wave Through City Streets",
+          body: [
+            "On an unusually warm winter afternoon in Boston's North End, a sound like a machine gun rattled the neighborhood as rivets burst from a massive 50-foot-tall steel industrial storage tank. Moments later, the structure exploded open, releasing 2.3 million gallons of thick brown molasses in a towering 25-foot wave.",
+            "Moving at an astounding speed of 35 miles per hour, the dense sugary wall swept over buildings, lifted streetcars off their tracks, and flattened nearby wooden houses. Witnesses described a terrifying roar accompanied by the pungent, overpowering aroma of fermenting sugar.",
+            "Rescuers struggled through knee-deep sticky syrup that hardened quickly in the cool winter air. Clean-up crews required over 80,000 man-hours, using salt water from harbor fireboats to wash away the stubborn residue. The disaster led to major reforms in industrial construction oversight."
+          ],
+          vocab: [
+            { word: "Rupture", pos: "verb", def: "To break or burst suddenly", example: "The water pipe ruptured during the extreme winter freeze." },
+            { word: "Pungent", pos: "adj", def: "Having a sharply strong taste or smell", example: "The kitchen was filled with the pungent smell of spices." },
+            { word: "Residue", pos: "noun", def: "A small amount of something that remains after the main part has gone", example: "A sticky syrup residue remained on the counter." },
+            { word: "Oversight", pos: "noun", def: "Supervision or management of an operation", example: "The project failed due to a lack of proper safety oversight." }
+          ],
+          prompts: [
+            "How would you react if an unusual non-water flood occurred in your city?",
+            "Who do you think was legally responsible for the industrial tank burst?",
+            "Debate whether historic industrial accidents led to better safety laws today."
+          ],
+          quiz: [
+            {
+              q: "How fast was the molasses wave traveling through Boston?",
+              options: ["10 miles per hour", "35 miles per hour", "60 miles per hour"],
+              correct: 1
+            },
+            {
+              q: "What washed away the hardened sticky syrup during cleanup?",
+              options: ["Boiling water", "Salt water from fireboats", "Chemical solvents"],
+              correct: 1
+            },
+            {
+              q: "What caused the tank rivets to burst initially?",
+              options: ["An earthquake", "An unusually warm day and pressure build-up", "A lightning strike"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A GIANT WAVE OF STICKY SYRUP FLOODS BOSTON STREETS!",
+          subdeck: "A Huge Tank Breaks Open and Sends Sweet Molasses Running Through the City",
+          body: [
+            "In January 1919, a very strange disaster happened in Boston. A huge steel tank holding 2.3 million gallons of thick brown molasses broke open with a loud noise. The sweet syrup ran out into the streets like a big wave.",
+            "The wave of molasses was 25 feet high and moved at 35 miles per hour. It knocked down houses and pushed streetcars off their tracks. People were surprised by the loud noise and strong sweet smell.",
+            "Helpers had a hard time walking through the sticky syrup. People used salt water from boats to clean the streets. After this sad accident, leaders made better rules for building large tanks."
+          ],
+          vocab: [
+            { word: "Molasses", pos: "noun", def: "A thick, dark, sweet syrup made from sugar", example: "Cookies taste delicious when made with molasses." },
+            { word: "Disaster", pos: "noun", def: "A sudden bad event that causes lots of damage", example: "The big storm was a disaster for the town." },
+            { word: "Sticky", pos: "adj", def: "Attaching easily to anything that touches it", example: "Honey is very sticky on your hands." },
+            { word: "Rules", pos: "noun", def: "Instructions that tell people what they must do", example: "Always follow the safety rules in school." }
+          ],
+          prompts: [
+            "What would you do if a wave of syrup came down your street?",
+            "Why was it difficult for helpers to clean up the molasses?",
+            "Do you like sweet foods like syrup or honey?"
+          ],
+          quiz: [
+            {
+              q: "What flooded the streets of Boston in 1919?",
+              options: ["Cold water", "Sticky molasses syrup", "Fresh milk"],
+              correct: 1
+            },
+            {
+              q: "How high was the giant wave of syrup?",
+              options: ["5 feet high", "25 feet high", "100 feet high"],
+              correct: 1
+            },
+            {
+              q: "What did people use to clean the streets?",
+              options: ["Salt water from boats", "Hot tea", "Soap powder"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "wojtek-bear",
+        title: "Wojtek: The Soldier Bear of WWII",
+        location: "EDINBURGH, SCOTLAND",
+        date: "MAY 18, 1944",
+        photo: "story-wojtek-bear.jpg",
+        caption: "Corporal Wojtek enjoying a wrestling match with his fellow Polish soldiers in camp.",
+        factCheck: "True. Wojtek was officially enlisted as a soldier in the Polish II Corps with his own rank and serial number.",
+        svgFallbackTitle: "CORPORAL WOJTEK THE BEAR",
+        standard: {
+          headline: "SYRIAN BEAR ENLISTS IN ARMY, CARRIES LIVE ARTILLERY SHELLS!",
+          subdeck: "Enlisted Private Wojtek Promoted to Corporal After Bravery at Battle of Monte Cassino",
+          body: [
+            "In 1942, Polish soldiers traveling through Iran adopted an orphaned Syrian brown bear cub. Named 'Wojtek'—meaning 'Happy Warrior'—the bear grew up among the artillery soldiers, copying their actions, drinking coffee, wrestling friendly troops, and learning to salute.",
+            "To secure Wojtek's passage on a British transport ship, he was officially enlisted into the Polish Army as a private. He was assigned a paybook, rank, and serial number. During the fierce Battle of Monte Cassino in Italy, Wojtek astonished troops by carrying heavy 100-pound crates of artillery shells to the front lines without dropping a single one.",
+            "After WWII ended, Corporal Wojtek retired honorably to the Edinburgh Zoo in Scotland, where he was frequently visited by his former army comrades, who would shout to him in Polish."
+          ],
+          vocab: [
+            { word: "Enlist", pos: "verb", def: "To officially join the armed forces", example: "He decided to enlist in the army after finishing school." },
+            { word: "Artillery", pos: "noun", def: "Large-caliber guns used in warfare on land", example: "The soldiers prepared the heavy artillery for defense." },
+            { word: "Comrade", pos: "noun", def: "A companion who shares one's activities or military service", example: "He met his old army comrades for a reunion." },
+            { word: "Orphaned", pos: "adj", def: "Left without living parents", example: "The zoo rescued an orphaned animal cub from the wild." }
+          ],
+          prompts: [
+            "Do you think animals should ever be used in military conflicts? Why or why not?",
+            "How do you think Wojtek boosted the morale of the soldiers during wartime?",
+            "If you could adopt any wild animal as a pet, which would you choose and why?"
+          ],
+          quiz: [
+            {
+              q: "What official military role did Wojtek hold during WWII?",
+              options: ["Army Mascot", "Enlisted Soldier & Corporal", "Regimental Guard Dog"],
+              correct: 1
+            },
+            {
+              q: "What task did Wojtek perform during the Battle of Monte Cassino?",
+              options: ["Carried heavy ammunition crates", "Guarded military headquarters", "Dug defensive trenches"],
+              correct: 0
+            },
+            {
+              q: "Where did Corporal Wojtek spend his retirement years?",
+              options: ["Warsaw Zoo", "Edinburgh Zoo", "London Animal Sanctuary"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A FRIENDLY BEAR JOINS THE ARMY AND HELPS SOLDIERS!",
+          subdeck: "Wojtek the Bear Carries Heavy Boxes and Becomes a Real Soldier Rank",
+          body: [
+            "During World War II, Polish soldiers found a little bear cub without a mother. They named him Wojtek, which means 'Happy Warrior.' He lived with the soldiers, drank coffee with them, and learned how to salute.",
+            "To take Wojtek on a ship, the army made him an official soldier. He got his own name card and military rank! In a big battle in Italy, Wojtek helped by carrying heavy boxes of supplies to his friends.",
+            "When the war ended, Wojtek went to live happily at the Edinburgh Zoo in Scotland. His soldier friends visited him often and talked to him in Polish."
+          ],
+          vocab: [
+            { word: "Cub", pos: "noun", def: "A young wild animal, such as a bear or lion", example: "The bear cub played in the forest with its mother." },
+            { word: "Salute", pos: "verb", def: "To raise your hand to show respect in the military", example: "The soldiers salute their captain every morning." },
+            { word: "Heavy", pos: "adj", def: "Weighing a lot; difficult to lift", example: "The box was too heavy for one person to carry." },
+            { word: "Visit", pos: "verb", def: "To go to see someone or somewhere", example: "I will visit my grandparents this weekend." }
+          ],
+          prompts: [
+            "Would you like to meet a bear that knows how to salute?",
+            "How do you think Wojtek helped the soldiers feel happy during a hard war?",
+            "What is your favorite animal at the zoo?"
+          ],
+          quiz: [
+            {
+              q: "What was the bear's name?",
+              options: ["Teddy", "Wojtek", "Bruno"],
+              correct: 1
+            },
+            {
+              q: "What did Wojtek do during the battle in Italy?",
+              options: ["He carried heavy boxes for soldiers", "He drove a truck", "He cooked meals"],
+              correct: 0
+            },
+            {
+              q: "Where did Wojtek live after the war ended?",
+              options: ["At a farm", "At the Edinburgh Zoo", "In a forest in Canada"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "dancing-plague-1518",
+        title: "The Dancing Plague of 1518",
+        location: "STRASBOURG, FRANCE",
+        date: "JULY 28, 1518",
+        photo: "story-dancing-plague.jpg",
+        caption: "Distressed citizens gather in town squares as doctors attempt to treat the mysterious dancing affliction.",
+        factCheck: "True. Historical documents from physicians, civic records, and cathedral sermons confirm the epidemic.",
+        svgFallbackTitle: "DANCING PLAGUE OF 1518",
+        standard: {
+          headline: "MANIA IN THE STREETS! HUNDREDS DANCE UNTIL COLLAPSE!",
+          subdeck: "Unexplained Epidemic Compels Citizens to Dance Feverishly for Weeks Without Rest",
+          body: [
+            "In July 1518, a woman named Frau Troffea stepped into a narrow street in Strasbourg and began to dance fervently. She continued for days without music or sleep. Within a month, over 400 townsfolk had joined her, leaping and twisting uncontrollably in the summer heat.",
+            "Puzzled city authorities consulted local physicians, who ruled out astrological causes and declared the affliction a 'hot blood' disease. Believing the victims needed to dance it out of their systems, the city built a wooden stage and hired musicians to keep playing.",
+            "The strategy backfired, driving even more people into the mania. Many dancers suffered severe exhaustion or heart complications before the strange compulsion mysteriously faded by early autumn. Modern historians suspect mass psychogenic illness triggered by severe famine."
+          ],
+          vocab: [
+            { word: "Fervently", pos: "adv", def: "With passionate intensity and enthusiasm", example: "She prayed fervently for a speedy recovery." },
+            { word: "Affliction", pos: "noun", def: "Something that causes pain or suffering", example: "The mysterious medical affliction stumped doctors." },
+            { word: "Compulsion", pos: "noun", def: "An irresistible urge to behave in a certain way", example: "He felt a strong compulsion to check his watch continuously." },
+            { word: "Famine", pos: "noun", def: "Extreme scarcity of food affecting a region", example: "Severe drought led to a widespread crop famine." }
+          ],
+          prompts: [
+            "Why do you think mass hysteria or psychological phenomena occur in crowds?",
+            "How would modern health authorities handle an unexplained behavioral epidemic?",
+            "Discuss how fear and stress can influence human physical behavior."
+          ],
+          quiz: [
+            {
+              q: "Where did the Dancing Plague of 1518 take place?",
+              options: ["London, England", "Strasbourg, France", "Vienna, Austria"],
+              correct: 1
+            },
+            {
+              q: "How did city authorities initially try to treat the dancing crowd?",
+              options: ["By building a stage & hiring musicians", "By arresting participants", "By putting everyone in quarantine"],
+              correct: 0
+            },
+            {
+              q: "What is the leading modern scientific theory for the epidemic?",
+              options: ["Contaminated drinking water", "Mass psychogenic illness from stress/famine", "A rare virus"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "THE STRANGE DANCING DISEASE OF 1518!",
+          subdeck: "Hundreds of People Dance in the Streets for Days Without Stopping",
+          body: [
+            "In the summer of 1518 in France, a woman started dancing in the street. She danced for days without music. Soon, hundreds of other people joined her and could not stop moving.",
+            "The town leaders did not know how to help. They thought the people just needed to keep dancing to get better. So, they built a wooden stage and paid musicians to play songs.",
+            "This idea did not work, and people grew very tired. After a few weeks, the strange dancing stopped as suddenly as it began. Scientists today think people danced because they were very stressed and hungry."
+          ],
+          vocab: [
+            { word: "Strange", pos: "adj", def: "Unusual or surprising; hard to understand", example: "He heard a strange noise outside his window." },
+            { word: "Musician", pos: "noun", def: "A person who plays music or sings", example: "The musician played a sweet tune on his violin." },
+            { word: "Tired", pos: "adj", def: "Needing sleep or rest", example: "After running for an hour, she felt very tired." },
+            { word: "Stress", pos: "noun", def: "Feeling worried or troubled about life", example: "Exams can cause students a lot of stress." }
+          ],
+          prompts: [
+            "How long do you like to dance when you hear music?",
+            "Why was building a stage a bad idea for the town leaders?",
+            "What do you do when you feel very tired or stressed?"
+          ],
+          quiz: [
+            {
+              q: "What did hundreds of people start doing in France in 1518?",
+              options: ["Singing songs", "Dancing in the streets", "Sleeping outdoors"],
+              correct: 1
+            },
+            {
+              q: "What did the town build to help the dancers?",
+              options: ["A wooden stage for musicians", "A new hospital", "A big swimming pool"],
+              correct: 0
+            },
+            {
+              q: "Why do scientists think people danced uncontrollably?",
+              options: ["They won a prize", "They were stressed and hungry", "They learned a new game"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "headless-chicken",
+        title: "Mike the Headless Chicken",
+        location: "COLORADO, USA",
+        date: "SEPTEMBER 10, 1945",
+        photo: "story-headless-chicken.jpg",
+        caption: "Farmer Lloyd Olsen presents Mike, the world's most resilient bird, to astonished crowds.",
+        factCheck: "True. Mike was examined at the University of Utah, where scientists verified the astounding anatomical fluke.",
+        svgFallbackTitle: "MIKE THE HEADLESS CHICKEN",
+        standard: {
+          headline: "ROOSTER SURVIVES 18 MONTHS WITHOUT A HEAD!",
+          subdeck: "Fruita Farmer's Miracle Bird Becomes National Sensation & Touring Curiosity",
+          body: [
+            "On September 10, 1945, farmer Lloyd Olsen of Fruita, Colorado, was preparing dinner when he attempted to butcher a young rooster named Mike. An unexpected stroke of the axe missed the jugular vein, leaving one ear and most of the brain stem intact.",
+            "To Olsen's utter disbelief, Mike did not perish. The bird balanced on a perch, attempted to preen his feathers, and even tried to crow. Seeing that the chicken remained active, Olsen decided to care for him, feeding him a mixture of milk and water using an eyedropper directly into his esophagus.",
+            "Mike became a national phenomenon, featured in Time and Life magazines, and went on tour across the United States. Scientists at the University of Utah evaluated Mike and confirmed that because the brain stem controlling heart rate and breathing was intact, the bird survived comfortably for 18 months."
+          ],
+          vocab: [
+            { word: "Intact", pos: "adj", def: "Not damaged or impaired; whole", example: "Despite the drop, the glass remained intact." },
+            { word: "Phenomenon", pos: "noun", def: "A remarkable person, thing, or event", example: "The young musician became a global internet phenomenon." },
+            { word: "Anatomical", pos: "adj", def: "Relating to body structure and biology", example: "The doctor conducted an anatomical study of the brain." },
+            { word: "Perish", pos: "verb", def: "To die or suffer complete destruction", example: "Without food and shelter, plants will perish quickly." }
+          ],
+          prompts: [
+            "Why do you think side-show attractions like Mike were so popular in the 1940s?",
+            "What ethical questions does Mike's story raise regarding animal care and fame?",
+            "How would you react if you encountered an unbelievable biological anomaly?"
+          ],
+          quiz: [
+            {
+              q: "Why did Mike survive despite losing most of his head?",
+              options: ["He had two brains", "His brain stem and jugular vein remained intact", "He was a robotic bird"],
+              correct: 1
+            },
+            {
+              q: "How was Mike fed by his owner during his 18 months of life?",
+              options: ["Through a special dish", "With an eyedropper directly into his esophagus", "He ate grain normally"],
+              correct: 1
+            },
+            {
+              q: "Which university scientifically verified Mike's condition?",
+              options: ["Harvard University", "University of Utah", "Oxford University"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "THE CHICKEN THAT LIVED WITHOUT A HEAD!",
+          subdeck: "Mike the Miracle Rooster Surprises the World and Lives for 18 Months",
+          body: [
+            "In 1945, a farmer in Colorado wanted to cook a chicken named Mike for dinner. But when he cut off the chicken's head, the important part of the brain stayed safe.",
+            "Mike did not die! He walked around, tried to clean his feathers, and lived normally. The farmer looked after Mike and fed him milk and water with a small dropper.",
+            "Mike became famous all over America. People paid money to see the miracle chicken. Doctors looked at Mike and said he survived because his brain stem was still healthy. Mike lived happily for 18 months."
+          ],
+          vocab: [
+            { word: "Rooster", pos: "noun", def: "An adult male chicken", example: "The rooster crows loudly every morning at sunrise." },
+            { word: "Survive", pos: "verb", def: "To continue to live after a dangerous event", example: "Plants can survive hot days if they get enough water." },
+            { word: "Famous", pos: "adj", def: "Known by a lot of people in many places", example: "The singer is famous around the world." },
+            { word: "Dropper", pos: "noun", def: "A small glass tube used to measure small drops of liquid", example: "Use a dropper to give medicine to the baby." }
+          ],
+          prompts: [
+            "Are you surprised that a chicken could live without its head?",
+            "How did the farmer feed Mike every day?",
+            "Why do you think people wanted to see Mike on tour?"
+          ],
+          quiz: [
+            {
+              q: "How long did Mike live after losing his head?",
+              options: ["2 days", "18 months", "5 years"],
+              correct: 1
+            },
+            {
+              q: "How did the farmer give food to Mike?",
+              options: ["With a small dropper", "With a big spoon", "Mike ate corn off the floor"],
+              correct: 0
+            },
+            {
+              q: "Why was Mike able to stay alive?",
+              options: ["He was magic", "Part of his brain was still intact", "He was not a real bird"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "halifax-explosion",
+        title: "The Halifax Explosion of 1917",
+        location: "HALIFAX, CANADA",
+        date: "DECEMBER 6, 1917",
+        photo: "story-halifax-explosion.jpg",
+        caption: "A giant mushroom-shaped smoke cloud rises miles above Halifax Harbor moments after collision.",
+        factCheck: "True. The blast released roughly 2.9 kilotons of TNT equivalent, devastating two square kilometers.",
+        svgFallbackTitle: "HALIFAX EXPLOSION 1917",
+        standard: {
+          headline: "LARGEST MAN-MADE EXPLOSION BEFORE ATOMIC AGE SHAKES CANADA!",
+          subdeck: "Wartime Collision in Halifax Harbor Triggers Monumental Detonation",
+          body: [
+            "On a clear Thursday morning in Halifax Harbor, Nova Scotia, two vessels—the French cargo ship SS Mont-Blanc, laden with high explosives, and the Norwegian vessel SS Imo—collided at slow speed in the narrow strait.",
+            "A fire broke out aboard the Mont-Blanc, igniting volatile explosives. Twenty minutes later, at 9:04 AM, the ship exploded with immense force, instantly vaporizing the vessel and creating a shockwave that flattened buildings and caused a 60-foot tsunami in the harbor.",
+            "The blast was felt over 130 miles away in Cape Breton. Despite the unimaginable destruction, the heroic telegraph operator Vince Coleman stayed at his post to signal incoming passenger trains to stop, saving hundreds of lives at the cost of his own."
+          ],
+          vocab: [
+            { word: "Laden", pos: "adj", def: "Heavily loaded or weighed down", example: "The cargo ship was laden with valuable trade goods." },
+            { word: "Volatile", pos: "adj", def: "Liable to change rapidly and unpredictably, especially for the worse", example: "Chemicals must be stored carefully if they are volatile." },
+            { word: "Vaporize", pos: "verb", def: "To convert or be converted into vapor or vanish instantly", example: "The intense heat vaporized the liquid immediately." },
+            { word: "Heroic", pos: "adj", def: "Showing extreme courage and bravery", example: "The firefighter received an award for her heroic actions." }
+          ],
+          prompts: [
+            "What makes Vince Coleman's decision to stay at his telegraph post so memorable?",
+            "How can port cities manage safety risks when transporting dangerous cargo?",
+            "Discuss how communities support one another during sudden unexpected disasters."
+          ],
+          quiz: [
+            {
+              q: "What caused the blast in Halifax Harbor?",
+              options: ["A naval battle", "A collision between two cargo ships", "An earthquake"],
+              correct: 1
+            },
+            {
+              q: "How far away was the shockwave felt?",
+              options: ["10 miles", "130 miles", "500 miles"],
+              correct: 1
+            },
+            {
+              q: "What did telegraph operator Vince Coleman do right before the blast?",
+              options: ["He fled to safety", "He signaled incoming trains to stop", "He called for fireboats"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A GIANT BOAT ACCIDENT CAUSES A HUGE EXPLOSION!",
+          subdeck: "Two Ships Crash in Canada and Cause the Biggest Blast of its Time",
+          body: [
+            "In December 1917, two large ships hit each other in a narrow harbor in Canada. One of the ships was carrying dangerous explosives for the war.",
+            "A fire started on the ship, and twenty minutes later, it exploded with a massive noise! The blast knocked down houses, broke windows far away, and made a huge water wave.",
+            "A brave man named Vince Coleman worked sending messages. Instead of running away, he stayed to send a message to stop a passenger train from coming to the city. He saved many lives."
+          ],
+          vocab: [
+            { word: "Collision", pos: "noun", def: "An accident in which two objects hit each other", example: "The two cars had a minor collision on the icy street." },
+            { word: "Explode", pos: "verb", def: "To burst violently with a loud noise", example: "The fireworks explode in the night sky." },
+            { word: "Brave", pos: "adj", def: "Ready to face danger without showing fear", example: "The brave police officer helped the lost child." },
+            { word: "Passenger", pos: "noun", def: "A person traveling in a train, car, or plane", example: "Every passenger on the train had a comfortable seat." }
+          ],
+          prompts: [
+            "Why was Vince Coleman a hero during the explosion?",
+            "Why is it dangerous to carry explosives on boats?",
+            "How can people help each other after a big accident?"
+          ],
+          quiz: [
+            {
+              q: "What hit each other in Halifax Harbor?",
+              options: ["Two big ships", "A car and a train", "Two airplanes"],
+              correct: 0
+            },
+            {
+              q: "What was inside one of the ships?",
+              options: ["Boxes of apples", "Dangerous explosives", "Fresh water"],
+              correct: 1
+            },
+            {
+              q: "Why did Vince Coleman stay at his job?",
+              options: ["To stop an incoming train", "To take a picture", "To fix his desk"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "green-children",
+        title: "The Green Children of Woolpit",
+        location: "WOOLPIT, ENGLAND",
+        date: "AUTUMN, 1150",
+        photo: "story-green-children.jpg",
+        caption: "Historical depiction of the discovery of the green children near the ancient wolf pits.",
+        factCheck: "True historical record documented by medieval chroniclers Ralph of Coggeshall and William of Newburgh.",
+        svgFallbackTitle: "GREEN CHILDREN OF WOOLPIT",
+        standard: {
+          headline: "MYSTERIOUS GREEN-SKINNED SIBLINGS FOUND IN ENGLISH VILLAGE!",
+          subdeck: "12th-Century English Villagers Stunned by Strange Children Who Spoke Unknown Language",
+          body: [
+            "During the reign of King Stephen in the Suffolk village of Woolpit, harvesters working in the fields made an astonishing discovery: two young children, a brother and sister, emerging from deep trenches used for trapping wolves.",
+            "The children had skin of an unusual green hue, wore garments made of unfamiliar fabrics, and spoke an unrecognizable language. When brought to the manor of Sir Richard de Calne, they refused all normal food for days until they discovered raw green broad beans, which they ate ravenously.",
+            "Over time, the children learned English, lost their green skin tone, and explained that they came from 'St. Martin’s Land'—a subterranean world where the sun never shone and all inhabitants were green. Modern historians speculate they may have been Flemish immigrant orphans suffering from chlorosis ('green sickness')."
+          ],
+          vocab: [
+            { word: "Hue", pos: "noun", def: "A color or shade", example: "The sunset filled the sky with a golden hue." },
+            { word: "Ravenously", pos: "adv", def: "With extreme hunger", example: "After the long hike, they ate their dinner ravenously." },
+            { word: "Subterranean", pos: "adj", def: "Existing or occurring underground", example: "Explorers discovered a vast subterranean cave network." },
+            { word: "Speculate", pos: "verb", def: "To form a theory without firm evidence", example: "Detectives speculate that the theft occurred at midnight." }
+          ],
+          prompts: [
+            "Do you believe the historical explanation (chlorosis/orphans) or the mythical one?",
+            "How would a modern city respond if two lost people speaking an unknown tongue appeared today?",
+            "Discuss how dietary deficiencies can affect human health and appearance."
+          ],
+          quiz: [
+            {
+              q: "What color was the skin of the two children found in Woolpit?",
+              options: ["Bright Blue", "Green", "Golden Yellow"],
+              correct: 1
+            },
+            {
+              q: "What food was the only item the children initially agreed to eat?",
+              options: ["Raw green broad beans", "Fresh bread", "Apples"],
+              correct: 0
+            },
+            {
+              q: "Where did the children claim to have come from once they learned English?",
+              options: ["St. Martin's Land", "The Kingdom of France", "A distant island"],
+              correct: 0
+            }
+          ]
+        },
+        easy: {
+          headline: "TWO GREEN CHILDREN FOUND IN AN ENGLISH VILLAGE!",
+          subdeck: "A Brother and Sister with Green Skin Speak a Strange Language",
+          body: [
+            "Long ago in an English village called Woolpit, farmers found two lost children near a hole in the ground. The boy and girl had green skin, wore strange clothes, and spoke a language no one understood.",
+            "At first, the children would not eat normal food. But when they saw green beans, they ate them happily! After eating normal food for a while, their skin slowly turned normal pink.",
+            "When they learned to speak English, they said they came from an underground place called 'St. Martin's Land' where everything was green. Today, doctors think they were lost kids who were sick from eating bad food."
+          ],
+          vocab: [
+            { word: "Village", pos: "noun", def: "A small town in the countryside", example: "They live in a quiet mountain village." },
+            { word: "Language", pos: "noun", def: "The words used by people to speak and write", example: "English and Spanish are two different languages." },
+            { word: "Beans", pos: "noun", def: "Seeds eaten as vegetables", example: "Green beans are healthy and good to eat." },
+            { word: "Underground", pos: "adj", def: "Below the surface of the earth", example: "Rabbits dig holes to live underground." }
+          ],
+          prompts: [
+            "Where do you think the green children came from?",
+            "Why did their skin color change when they ate normal food?",
+            "How would you help someone who does not speak your language?"
+          ],
+          quiz: [
+            {
+              q: "What color was the children's skin at first?",
+              options: ["Blue", "Green", "Red"],
+              correct: 1
+            },
+            {
+              q: "What was the first food they wanted to eat?",
+              options: ["Green beans", "Fresh bread", "Sweet cakes"],
+              correct: 0
+            },
+            {
+              q: "What happened to their skin after eating normal food?",
+              options: ["It turned normal color", "It turned blue", "It stayed green"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "rain-frogs",
+        title: "The Mysterious Rain of Frogs & Fish",
+        location: "YAMAGUCHI, JAPAN",
+        date: "JUNE 16, 2009",
+        photo: "story-rain-frogs.jpg",
+        caption: "Resident holds surprising meteorological phenomenon collected from rooftops after storm.",
+        factCheck: "True. Animal rain events are documented worldwide, recorded by scientists since Roman times.",
+        svgFallbackTitle: "RAIN OF FROGS & FISH",
+        standard: {
+          headline: "HEAVENS OPEN UP: THOUSANDS OF LIVING FROGS FALL FROM SKY!",
+          subdeck: "Meteorologists Point to Waterspouts as Violent Squall Shower Creatures over Inland Town",
+          body: [
+            "Residents of Ishikawa Prefecture awoke to a bizarre sight after a sudden thunderstorm: thousands of small tadpoles, frogs, and small fish scattered across parked cars, rooftops, and quiet suburban gardens.",
+            "Similar occurrences have been recorded throughout history, including a famous 1873 storm in Kansas where frogs rained down so heavily that streets were blocked. While ancient civilizations viewed the phenomenon as a supernatural omen, modern science offers a clear explanation.",
+            "Meteorologists explain that powerful waterspouts—tornadoes that form over oceans or lakes—can suck up small aquatic animals into cloud updrafts. Carried miles inland by strong winds, the creatures are dropped when storm winds weaken."
+          ],
+          vocab: [
+            { word: "Meteorologist", pos: "noun", def: "A weather forecaster or scientist who studies the atmosphere", example: "The meteorologist predicted heavy rain for the weekend." },
+            { word: "Waterspout", pos: "noun", def: "A whirling column of air and water mist over a body of water", example: "The captain spotted a waterspout off the coast." },
+            { word: "Aquatic", pos: "adj", def: "Relating to water or living in water", example: "Dolphins and seals are well-known aquatic mammals." },
+            { word: "Updraft", pos: "noun", def: "An upward current of gas or air", example: "Glider pilots use warm air updrafts to gain altitude." }
+          ],
+          prompts: [
+            "How would you react if you stepped outside during a rainstorm of aquatic animals?",
+            "How can scientific explanations replace ancient superstitions or myths?",
+            "Can you think of other extreme weather phenomena caused by winds and clouds?"
+          ],
+          quiz: [
+            {
+              q: "What natural weather phenomenon causes animal rains?",
+              options: ["Hurricanes", "Waterspouts lifting water and aquatic life", "Earthquakes"],
+              correct: 1
+            },
+            {
+              q: "Where do the animals go after being lifted into the atmosphere?",
+              options: ["They freeze in space", "They travel inland in cloud updrafts until winds weaken", "They stay in the clouds forever"],
+              correct: 1
+            },
+            {
+              q: "How far back in history have animal rain events been recorded?",
+              options: ["Only since 2000", "Since ancient Roman times", "Since 1950"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "SMALL FROGS AND FISH FALL FROM THE SKY LIKE RAIN!",
+          subdeck: "A Strong Storm Lifts Little Animals into the Clouds and Drops Them on Land",
+          body: [
+            "People in Japan woke up after a big thunderstorm and found something very strange on the ground. Thousands of small frogs, tadpoles, and fish were sitting on top of cars and houses!",
+            "This strange rain has happened many times in history. Long ago, people thought it was magic or a mysterious sign. But weather doctors know the true answer.",
+            "When strong wind twisters move over lakes or oceans, they pick up water and tiny animals. The wind carries the animals high into the sky. When the wind stops, the frogs drop gently back to the ground!"
+          ],
+          vocab: [
+            { word: "Frog", pos: "noun", def: "A small green animal that leaps and lives near water", example: "The little green frog jumped into the pond." },
+            { word: "Storm", pos: "noun", def: "Bad weather with strong winds and heavy rain", example: "We stayed indoors during the heavy rain storm." },
+            { word: "Twister", pos: "noun", def: "A violent spinning column of wind", example: "The twister picked up leaves high into the air." },
+            { word: "Drop", pos: "verb", def: "To fall down to the ground", example: "Be careful not to drop your ice cream." }
+          ],
+          prompts: [
+            "What would you do if fish fell from the sky near your house?",
+            "How does strong wind lift small things into the air?",
+            "What kind of weather do you like best?"
+          ],
+          quiz: [
+            {
+              q: "What fell from the sky during the storm in Japan?",
+              options: ["Snowballs", "Frogs and fish", "Leaves"],
+              correct: 1
+            },
+            {
+              q: "What picks up the little animals from lakes?",
+              options: ["Big birds", "Strong wind twisters", "Airplanes"],
+              correct: 1
+            },
+            {
+              q: "When do the animals fall back down?",
+              options: ["When the wind stops", "When night comes", "When it gets hot"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "war-of-worlds",
+        title: "The Great Radio Panic of 1938",
+        location: "NEW YORK, USA",
+        date: "OCTOBER 30, 1938",
+        photo: "story-radio-panic.jpg",
+        caption: "Actor Orson Welles fields questions from reporters following the controversial Halloween broadcast.",
+        factCheck: "True. Thousands of listeners flooded police station switchboards believing Aliens had landed in New Jersey.",
+        svgFallbackTitle: "1938 RADIO PANIC BROADCAST",
+        standard: {
+          headline: "MARTIAN INVASION RADIO BROADCAST TRIGGERS NATIONWIDE PANIC!",
+          subdeck: "Orson Welles' Realistic Adaptation of 'War of the Worlds' Mistaken for Live News Alert",
+          body: [
+            "On Halloween Eve in 1938, millions of Americans tuned their radios to CBS Radio's 'Mercury Theatre on the Air.' What began as pleasant dance music was suddenly interrupted by urgent breaking news bulletins reporting alien tripods emerging from a meteorite crater in Grover's Mill, New Jersey.",
+            "Directed by 23-year-old Orson Welles, the performance simulated live news reports so convincingly that panic spread rapidly. Frightened citizens packed highways, jammed phone lines, and fled their homes with wet towels over their faces to protect against 'Martian poison gas.'",
+            "Despite four on-air reminders that the broadcast was fictional, panic spread among those who tuned in late. The event demonstrated the terrifying power of mass media and catapulted Welles to Hollywood stardom."
+          ],
+          vocab: [
+            { word: "Simulate", pos: "verb", def: "To imitate the appearance or character of something", example: "Flight simulators help train pilots safely on land." },
+            { word: "Catapult", pos: "verb", def: "To hurl or launch quickly into a new position", example: "The hit movie catapulted the young actor to global fame." },
+            { word: "Fictional", pos: "adj", def: "Created from imagination; not real", example: "Sherlock Holmes is a famous fictional detective." },
+            { word: "Controversial", pos: "adj", def: "Giving rise to public disagreement or debate", example: "The mayor's new parking rule was highly controversial." }
+          ],
+          prompts: [
+            "Why were radio listeners in 1938 so quick to believe the Martian invasion was real?",
+            "How does fake news or viral media spread differently today compared to 1938?",
+            "Do media broadcasters have a responsibility to clearly label fictional content?"
+          ],
+          quiz: [
+            {
+              q: "Who directed and performed the famous 'War of the Worlds' radio broadcast?",
+              options: ["H.G. Wells", "Orson Welles", "Walt Disney"],
+              correct: 1
+            },
+            {
+              q: "Why did many people miss the notice that the program was fictional?",
+              options: ["They tuned in late after the show started", "The radio had poor sound quality", "The actors whispered"],
+              correct: 0
+            },
+            {
+              q: "Where were the fictional Martians reported to have landed?",
+              options: ["Central Park, New York", "Grover's Mill, New Jersey", "Chicago, Illinois"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A SCARY RADIO SHOW MAKES PEOPLE THINK ALIENS HAVE LANDED!",
+          subdeck: "An Actor Reads a Science Fiction Story so Well That Listeners Become Afraid",
+          body: [
+            "On Halloween in 1938, millions of people in America listened to a radio show. The actor, Orson Welles, acted out a famous sci-fi story about monsters from Mars coming to Earth.",
+            "The story sounded like real breaking news reports! Because it sounded so real, many frightened people believed aliens were really attacking. People called the police and ran outside.",
+            "The show was just a fun story for Halloween, but people who tuned in late missed the beginning. After this broadcast, Orson Welles became a very famous actor in Hollywood!"
+          ],
+          vocab: [
+            { word: "Radio", pos: "noun", def: "A box that plays music and news through sound waves", example: "Grandpa loves listening to music on the radio." },
+            { word: "Alien", pos: "noun", def: "A creature from another planet", example: "The movie was about a friendly green alien." },
+            { word: "Afraid", pos: "adj", def: "Feeling fear or worry", example: "She was afraid of the dark room." },
+            { word: "Actor", pos: "noun", def: "A person who performs in movies, plays, or shows", example: "The actor spoke his lines clearly on stage." }
+          ],
+          prompts: [
+            "Why did people think the story on the radio was real news?",
+            "Do you like listening to scary stories on Halloween?",
+            "How do we check if news on the internet is real today?"
+          ],
+          quiz: [
+            {
+              q: "What was the radio story about?",
+              options: ["Aliens from Mars landing on Earth", "A baseball game", "A cooking show"],
+              correct: 0
+            },
+            {
+              q: "Who was the young actor reading the radio story?",
+              options: ["Orson Welles", "Charlie Chaplin", "Elvis Presley"],
+              correct: 0
+            },
+            {
+              q: "Why were people confused?",
+              options: ["The show sounded like real breaking news", "The radio was broken", "The actor spoke Spanish"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "londons-fog-1952",
+        title: "The Great Smog of London 1952",
+        location: "LONDON, ENGLAND",
+        date: "DECEMBER 5, 1952",
+        photo: "story-london-smog.jpg",
+        caption: "A London policeman wearing a protective mask guides traffic with a lantern during daylight hours.",
+        factCheck: "True. The crisis directly led to the landmark Clean Air Act of 1956.",
+        svgFallbackTitle: "GREAT SMOG OF LONDON 1952",
+        standard: {
+          headline: "THICK TOXIC SMOG BLINDS CAPITAL CITY FOR FIVE DAYS!",
+          subdeck: "Cold Weather & Coal Smoke Combine to Create Unprecedented Deadly Environmental Crisis",
+          body: [
+            "In December 1952, a high-pressure weather system settled over London, trapping cold air beneath a warm layer of atmosphere. To keep warm, millions of householders burned large quantities of cheap, high-sulfur coal in fireplaces.",
+            "Combined with smoke from industrial chimneys and bus exhaust, a thick yellow-black fog enveloped the entire city. Visibility was reduced to mere feet; movie theaters halted film screenings because the fog invaded indoor auditoriums, obscuring screens.",
+            "Public transit halted, and pedestrians held onto walls to navigate familiar streets. The disaster led directly to environmental reforms, culminating in the historic Clean Air Act of 1956, which banned coal burning in urban centers."
+          ],
+          vocab: [
+            { word: "Unprecedented", pos: "adj", def: "Never done or known before", example: "The city experienced an unprecedented heatwave in May." },
+            { word: "Envelop", pos: "verb", def: "To wrap up, cover, or surround completely", example: "Dense morning fog enveloped the coastal harbor." },
+            { word: "Obscure", pos: "verb", def: "To keep from being seen; conceal", example: "Heavy clouds obscure the view of the mountain peak." },
+            { word: "Culminate", pos: "verb", def: "To reach a climax or point of highest development", example: "Years of research culminated in the development of a vaccine." }
+          ],
+          prompts: [
+            "What modern environmental regulations protect air quality in your city today?",
+            "How can societies balance industrial energy needs with public health?",
+            "Imagine living in a city where fog is so thick you cannot see your own feet—how would daily life change?"
+          ],
+          quiz: [
+            {
+              q: "What main factor caused the 1952 London smog to build up?",
+              options: ["Volcanic ash", "Coal smoke trapped under cold high-pressure air", "Chemical factory explosion"],
+              correct: 1
+            },
+            {
+              q: "How severely was indoor visibility affected during the peak smog?",
+              options: ["Not at all", "Movie theaters had to stop films as fog entered indoor halls", "Windows cracked from pressure"],
+              correct: 1
+            },
+            {
+              q: "Which major legislation was passed as a result of this tragedy?",
+              options: ["The Clean Air Act of 1956", "The London Environmental Accord", "The Coal Control Bill"],
+              correct: 0
+            }
+          ]
+        },
+        easy: {
+          headline: "THICK SMOKE AND FOG COVER ALL OF LONDON!",
+          subdeck: "Dirty Air from Fires Makes it Hard to See Anything for Five Days",
+          body: [
+            "In December 1952, London became very cold. Millions of people burned coal fires in their homes to stay warm. The smoke from the fires got trapped over the city by cold weather.",
+            "A thick yellow-black fog covered all the streets. The smoke was so thick that people could not see their own feet! Even movie theaters had to close because fog got inside the rooms.",
+            "Buses and cars stopped driving because drivers could not see the road. After this terrible week, government leaders passed new laws to keep city air clean and safe."
+          ],
+          vocab: [
+            { word: "Smog", pos: "noun", def: "A mixture of smoke and fog in the air", example: "The big city had heavy smog on hot days." },
+            { word: "Coal", pos: "noun", def: "A black rock burned to make heat or power", example: "Old trains burned coal to move fast." },
+            { word: "Thick", pos: "adj", def: "Difficult to see through or move through", example: "We could not see through the thick fog." },
+            { word: "Clean", pos: "adj", def: "Free from dirt or pollution", example: "Fresh air in the mountains is clean." }
+          ],
+          prompts: [
+            "How does dirty air or smoke feel when you try to breathe?",
+            "Why was it hard for buses to drive during the fog?",
+            "What can cities do to keep our air clean today?"
+          ],
+          quiz: [
+            {
+              q: "Why did people burn a lot of coal in London in 1952?",
+              options: ["To cook dinner", "To stay warm during cold weather", "To make steam engines go"],
+              correct: 1
+            },
+            {
+              q: "How thick was the yellow-black fog?",
+              options: ["People could not see their feet", "It was light like dust", "You could see clearly"],
+              correct: 0
+            },
+            {
+              q: "What did government leaders do after the smog?",
+              options: ["They built more fireplaces", "They made new laws to keep the air clean", "They bought more buses"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "emu-war-1932",
+        title: "The Great Emu War of 1932",
+        location: "CAMPION, AUSTRALIA",
+        date: "NOVEMBER 2, 1932",
+        photo: "story-emu-war.jpg",
+        caption: "Soldiers set up heavy machine guns in Western Australia during the legendary Emu campaign.",
+        factCheck: "True. Major Meredith's military unit was dispatched with Lewis guns to cull crop-damaging emus.",
+        svgFallbackTitle: "GREAT EMU WAR OF 1932",
+        standard: {
+          headline: "AUSTRALIAN MILITARY DEPLOYED AGAINST 20,000 FLIGHTLESS BIRDS!",
+          subdeck: "Royal Australian Artillery Soldiers Sent to Outback Farmers' Defense in Bizarre Conflict",
+          body: [
+            "Following World War I, thousands of Australian military veterans were given farmland in Western Australia to grow wheat. However, during the Great Depression, over 20,000 massive native emus migrated inland, consuming crops and smashing fences meant to keep rabbits out.",
+            "Desperate farmers petitioned the Minister of Defence for military aid. In November 1932, Major G.P.W. Meredith led soldiers equipped with heavy machine guns to cull the birds. However, the emus proved remarkably fast and evasive, splitting into small tactical groups when fired upon.",
+            "After weeks of difficult operation in the scorching heat, the birds easily outmaneuvered military forces. Major Meredith famously remarked: 'If we had a military division with the bullet-stopping capacity of these birds it would face any army in the world.' Parliament withdrew troops shortly after."
+          ],
+          vocab: [
+            { word: "Evasive", pos: "adj", def: "Tending to avoid commitment or escape capture", example: "The rabbit took evasive turns to escape the eagle." },
+            { word: "Outmaneuver", pos: "verb", def: "To evade or defeat by superior skill or strategy", example: "The smart chess player outmaneuvered her opponent." },
+            { word: "Migrate", pos: "verb", def: "To move from one region to another according to seasons", example: "Birds migrate south every autumn for warmer weather." },
+            { word: "Petition", pos: "verb", def: "To make a formal request to an authority", example: "Residents petitioned the council for a new pedestrian crossing." }
+          ],
+          prompts: [
+            "Why did military weapons prove ineffective against wild emus in the open outback?",
+            "How should governments balance agricultural needs with wildlife conservation?",
+            "What makes this unusual military conflict so famous and humorous today?"
+          ],
+          quiz: [
+            {
+              q: "Why were soldiers sent to Western Australia in 1932?",
+              options: ["To protect wheat farms from 20,000 invading emus", "To construct a long railway line", "To search for gold"],
+              correct: 0
+            },
+            {
+              q: "How did emus react when soldiers opened fire with machine guns?",
+              options: ["They surrendered", "They split into small evasive groups and ran fast", "They hid in burrows"],
+              correct: 1
+            },
+            {
+              q: "What was the ultimate outcome of the Emu War?",
+              options: ["The military declared total victory", "Troops were withdrawn after birds outmaneuvered them", "Emus were relocated to zoos"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "AUSTRALIA SENDS SOLDIERS TO FIGHT 20,000 GIANT BIRDS!",
+          subdeck: "Fast-Running Emus Eat Farmers' Crops and Win a Funny War in the Outback",
+          body: [
+            "In 1932, farmers in Australia had a big problem. Over 20,000 huge emus—tall birds that run fast but cannot fly—came to their fields and ate all the wheat crops.",
+            "The government sent soldiers with big guns to help the farmers. But the emus were very fast and clever! When the soldiers fired, the emus ran away quickly in small groups.",
+            "The big birds were too fast for the soldiers to catch. After a few weeks, the soldiers gave up and went home. The emus won the funny battle!"
+          ],
+          vocab: [
+            { word: "Emu", pos: "noun", def: "A large Australian bird that runs fast but cannot fly", example: "An emu can run as fast as a car in the fields." },
+            { word: "Crop", pos: "noun", def: "Plants grown by farmers for food, like wheat or corn", example: "The farmer harvested his corn crop in autumn." },
+            { word: "Fast", pos: "adj", def: "Moving at high speed", example: "The cheetah is the fastest land animal." },
+            { word: "Clever", pos: "adj", def: "Quick to learn and understand things", example: "The clever bird solved the puzzle to get food." }
+          ],
+          prompts: [
+            "Why were the emus able to run away from the soldiers so easily?",
+            "What do emus like to eat on farms?",
+            "Have you ever seen a bird that cannot fly, like an emu or penguin?"
+          ],
+          quiz: [
+            {
+              q: "What kind of animal caused trouble for Australian farmers?",
+              options: ["Wild dogs", "Emus (large running birds)", "Rabbits"],
+              correct: 1
+            },
+            {
+              q: "Why was it hard for soldiers to stop the emus?",
+              options: ["The emus flew up in trees", "The emus ran very fast in small groups", "The emus hid in houses"],
+              correct: 1
+            },
+            {
+              q: "Who won the strange 'Emu War'?",
+              options: ["The emus", "The soldiers", "The cat"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "tunguska-event",
+        title: "The Great Tunguska Blast of 1908",
+        location: "SIBERIA, RUSSIA",
+        date: "JUNE 30, 1908",
+        photo: "story-tunguska-event.jpg",
+        caption: "Trees flattened outwards across hundreds of square miles of Siberian forest following the mysterious explosion.",
+        factCheck: "True. Over 80 million trees were flattened across 800 square miles by a meteor airburst estimated at 12 megatons.",
+        svgFallbackTitle: "THE TUNGUSKA EVENT 1908",
+        standard: {
+          headline: "MYSTERIOUS SKY EXPLOSION FLATTENS 80 MILLION TREES IN SIBERIA!",
+          subdeck: "Blinding Flash and Massive Shockwave Light Up Night Skies Across Europe",
+          body: [
+            "On the morning of June 30, 1908, a colossal explosion detonate over the remote Podkamennaya Tunguska River region in Siberia. The force was estimated to be 1,000 times more powerful than the atomic bomb dropped on Hiroshima, flattening 80 million trees across 800 square miles in a radial pattern.",
+            "Witnesses hundreds of miles away described a brilliant blue-white light as bright as the sun, followed by a roaring shockwave that knocked people off their feet and shattered windows over 300 miles distant. Night skies across Europe were so brightly illuminated that people in London could read evening newspapers outdoors.",
+            "Because no impact crater was ever found, scientists spent decades debating the cause. Today, consensus holds that a meteoroid roughly 150 feet wide exploded in mid-air (an airburst) 5 to 10 kilometers above the ground, leaving no solid crater behind."
+          ],
+          vocab: [
+            { word: "Detonate", pos: "verb", def: "To explode or cause to explode violently", example: "Demolition experts detonated the old bridge safely." },
+            { word: "Colossal", pos: "adj", def: "Extremely large or huge", example: "A colossal wave washed over the rocky shoreline." },
+            { word: "Illuminate", pos: "verb", def: "To light up or make bright", example: "Fireworks illuminated the dark night sky." },
+            { word: "Consensus", pos: "noun", def: "General agreement among a group of experts", example: "Scientists reached a consensus about the cause of climate change." }
+          ],
+          prompts: [
+            "Why was it difficult for scientists in 1908 to investigate an event in remote Siberia?",
+            "How does modern technology help us track meteors before they reach Earth?",
+            "Imagine sitting outside at midnight and seeing the sky light up like daytime—what would you think?"
+          ],
+          quiz: [
+            {
+              q: "Why was no impact crater found at the Tunguska site?",
+              options: ["The meteor fell in the ocean", "The meteor exploded in mid-air before hitting the ground", "It was a fake story"],
+              correct: 1
+            },
+            {
+              q: "How far away could people read newspapers at night because of the lit sky?",
+              options: ["Only 1 mile away", "In London, thousands of miles away", "Only in Siberia"],
+              correct: 1
+            },
+            {
+              q: "How many trees were flattened in the blast?",
+              options: ["800 trees", "80 million trees", "8 million trees"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A GIANT EXPLOSION IN THE SKY KNOCKS DOWN A WHOLE FOREST!",
+          subdeck: "A Space Rock Explodes in Siberia and Makes the Night Sky Light Up like Day",
+          body: [
+            "In June 1908, a giant explosion happened high in the sky over a forest in Siberia, Russia. It was so strong that it knocked down 80 million tall pine trees!",
+            "The flash of light was so bright that people thousands of miles away in Europe could read books outdoors in the middle of the night. People far away felt the ground shake under their feet.",
+            "Scientists searched for years but found no big hole in the ground. They now know that a space rock (meteor) exploded high up in the air before hitting the dirt."
+          ],
+          vocab: [
+            { word: "Explosion", pos: "noun", def: "A violent and loud sudden blast", example: "We heard a loud explosion from the fireworks." },
+            { word: "Meteor", pos: "noun", def: "A rock moving through space that enters Earth's sky", example: "A bright meteor flew across the night sky." },
+            { word: "Forest", pos: "noun", def: "A large area covered with many trees", example: "Bears and deer live in the quiet forest." },
+            { word: "Remote", pos: "adj", def: "Far away from towns and cities", example: "They built a small cabin on a remote island." }
+          ],
+          prompts: [
+            "What would you do if the night sky suddenly became as bright as daytime?",
+            "Why is it safer that the meteor exploded high in the sky rather than hitting a city?",
+            "Do you like looking at shooting stars in the night sky?"
+          ],
+          quiz: [
+            {
+              q: "What exploded over the forest in Siberia?",
+              options: ["A space rock (meteor)", "An airplane", "A volcano"],
+              correct: 0
+            },
+            {
+              q: "What happened to 80 million trees in the forest?",
+              options: ["They caught fire", "They were flattened on the ground", "They grew bigger"],
+              correct: 1
+            },
+            {
+              q: "Did the meteor hit the ground or explode in the air?",
+              options: ["It hit the ground and made a lake", "It exploded high up in the air", "It bounced back into space"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "oak-island",
+        title: "The Unsolved Money Pit of Oak Island",
+        location: "NOVA SCOTIA, CANADA",
+        date: "SUMMER, 1795",
+        photo: "story-oak-island.jpg",
+        caption: "Early treasure hunters construct wooden scaffolds over the notorious Money Pit shaft.",
+        factCheck: "True. Millions of dollars and over 200 years of excavations have taken place without solving the origin.",
+        svgFallbackTitle: "OAK ISLAND MONEY PIT",
+        standard: {
+          headline: "TEENAGER DISCOVERS BOOBY-TRAPPED TREASURE PIT IN CANADA!",
+          subdeck: "200-Year Search for Pirate Gold Uncovers Complex Wooden Platforms and Flood Booby Traps",
+          body: [
+            "In the summer of 1795, a teenager named Daniel McGinnis was exploring Oak Island off the coast of Nova Scotia when he noticed an unusual circular depression in the ground directly beneath a carved oak tree limb. Intrigued, he returned with two friends to dig into the spot.",
+            "As the boys dug, they discovered a layer of flagstones ten feet down, followed by sturdy oak log platforms every ten feet thereafter. As searchers over the next century dug deeper, they triggered ingenious underground flood tunnels connected to the ocean that repeatedly drowned the shaft in seawater.",
+            "Inscriptions on stone tablets, coconut fiber, and links of gold chain have been recovered from deep underground, yet the origin of the pit—whether built by pirates, Templars, or engineers—remains one of history's greatest engineering riddles."
+          ],
+          vocab: [
+            { word: "Ingenious", pos: "adj", def: "Clever, original, and inventive", example: "The engineer designed an ingenious solution to collect rainwater." },
+            { word: "Excavation", pos: "noun", def: "The act of digging out soil or rock to reveal items", example: "Archaeologists began an excavation near the old castle." },
+            { word: "Booby-trap", pos: "noun", def: "A hidden device designed to harm or catch unsuspecting intruders", example: "The ancient tomb was protected by booby-traps." },
+            { word: "Inscription", pos: "noun", def: "Words or symbols carved or written onto a hard surface", example: "The stone slab contained an ancient Latin inscription." }
+          ],
+          prompts: [
+            "Who do you believe engineered the booby-trapped flood tunnels on Oak Island?",
+            "Why do people spend millions of dollars searching for historic treasure even when success is unlikely?",
+            "If you found a mysterious pit in the woods, would you dig it up or leave it alone?"
+          ],
+          quiz: [
+            {
+              q: "What stopped searchers from digging deeper into the Money Pit?",
+              options: ["Poisonous gas", "Ingenious flood tunnels connected to the ocean", "Solid granite rock"],
+              correct: 1
+            },
+            {
+              q: "Who first discovered the unusual hole in the ground in 1795?",
+              options: ["A famous pirate captain", "A teenager named Daniel McGinnis", "A team of army engineers"],
+              correct: 1
+            },
+            {
+              q: "What was found every ten feet as the boys dug down into the pit?",
+              options: ["Oak log platforms", "Iron chest keys", "Skeletons"],
+              correct: 0
+            }
+          ]
+        },
+        easy: {
+          headline: "A MYSTERIOUS TREASURE HOLE IN CANADA DISCOVERED BY TEENS!",
+          subdeck: "A Deep Pit in the Ground Has Wooden Floors and Ocean Water Traps",
+          body: [
+            "In 1795, a teenage boy on an island in Canada found a strange round hole under an oak tree. He brought his two friends to dig down into the earth to see if treasure was hidden there.",
+            "Every ten feet they dug, they found a strong wooden log floor! But when later treasure hunters dug deeper, sea water suddenly rushed in through secret underground pipes to flood the hole.",
+            "People have been digging on Oak Island for over 200 years. They have found small pieces of gold chain and stone carved with mystery marks, but nobody has ever reached the bottom!"
+          ],
+          vocab: [
+            { word: "Treasure", pos: "noun", def: "Valuable items like gold, silver, or jewels", example: "Pirates hid their treasure chest in a cave." },
+            { word: "Dig", pos: "verb", def: "To break up and move dirt out of the ground", example: "The dog likes to dig holes in the garden." },
+            { word: "Trap", pos: "noun", def: "A hidden trick designed to stop or catch someone", example: "The water trap filled the hole when they touched the lever." },
+            { word: "Secret", pos: "adj", def: "Not known or seen by others", example: "They found a secret door behind the bookcase." }
+          ],
+          prompts: [
+            "What kind of treasure do you think is buried in the pit?",
+            "Why is sea water leaking into the hole a smart trap?",
+            "Would you like to search for buried treasure on an island?"
+          ],
+          quiz: [
+            {
+              q: "What did the boys find every 10 feet as they dug?",
+              options: ["Wooden log floors", "Boxes of gold coins", "Bags of salt"],
+              correct: 0
+            },
+            {
+              q: "Why did sea water keep filling up the hole?",
+              options: ["Because it rained a lot", "Because of secret water traps connected to the sea", "Because the boys brought buckets"],
+              correct: 1
+            },
+            {
+              q: "Has anyone ever reached the very bottom of the Money Pit?",
+              options: ["Yes, last year", "No, it remains unsolved", "Yes, in 1800"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "cheshire-leaper",
+        title: "The Spring-Heeled Jack Mystery",
+        location: "LONDON, ENGLAND",
+        date: "FEBRUARY 20, 1838",
+        photo: "story-cheshire-leaper.jpg",
+        caption: "Victorian woodcut illustrating the terrifying phantom leaping over high city walls.",
+        factCheck: "True. Lord Mayor of London official public meetings were held in 1838 to investigate the sightings.",
+        svgFallbackTitle: "SPRING-HEELED JACK 1838",
+        standard: {
+          headline: "LEAPING PHANTOM TERRORIZES VICTORIAN LONDON STREETS!",
+          subdeck: "Mysterious Cloaked Figure Jumps 10-Foot Walls and Baffles Metropolitan Police",
+          body: [
+            "In early 1838, the Lord Mayor of London received an astonishing delegation of terrified citizens reporting encounters with a mysterious entity known as 'Spring-Heeled Jack.' Witnesses described a tall figure wearing a dark cape, oilskin suit, and metallic helmet, possessing glowing red eyes and the ability to breathe blue flames.",
+            "What fascinated and terrified the public most was the creature's supernatural jumping ability. When confronted by watchmen or passersby, Jack would reportedly leap effortlessly over nine-foot garden walls and rooftop parapets while laughing wildly.",
+            "Despite dozens of sightings reported across England over fifty years—and countless police ambushes—Spring-Heeled Jack was never apprehended. Modern researchers debate whether he was an elaborate aristocratic prankster using hidden spring-loaded boots or a urban myth embellished by sensation-seeking newspapers."
+          ],
+          vocab: [
+            { word: "Entity", pos: "noun", def: "A thing with distinct and independent existence", example: "Scientists could not identify the strange entity in the photograph." },
+            { word: "Apprehend", pos: "verb", def: "To arrest or capture someone for a crime", example: "Police officers worked quickly to apprehend the thief." },
+            { word: "Supernatural", pos: "adj", def: "Attributed to some force beyond scientific understanding", example: "The ghost story claimed the house had supernatural events." },
+            { word: "Aristocratic", pos: "adj", def: "Belonging to the highest social class or nobility", example: "The wealthy aristocratic family lived in a castle." }
+          ],
+          prompts: [
+            "Do you think Spring-Heeled Jack was a human using mechanical springs or a myth?",
+            "How did newspapers in the 1800s make stories sound more exciting or frightening?",
+            "Why do urban legends spread so quickly through large cities?"
+          ],
+          quiz: [
+            {
+              q: "What extraordinary physical ability was Spring-Heeled Jack known for?",
+              options: ["Swimming underwater for hours", "Leaping high over walls and roofs", "Becoming invisible"],
+              correct: 1
+            },
+            {
+              q: "Were police ever able to catch Spring-Heeled Jack?",
+              options: ["Yes, he was caught in 1840", "No, he was never apprehended", "He turned himself in"],
+              correct: 1
+            },
+            {
+              q: "What did witnesses claim Jack wore on his head?",
+              options: ["A top hat", "A metallic helmet", "A cloth scarf"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A STRANGE LEAPING MAN JUMPS OVER HIGH WALLS IN LONDON!",
+          subdeck: "People in 1838 Tell Stories of a Mysterious Jumper Who Could Jump Over Houses",
+          body: [
+            "In London long ago, people were scared by a strange man named 'Spring-Heeled Jack.' People said he wore a dark cape and a metal helmet and could jump high into the air!",
+            "When police officers tried to catch him, Jack would laugh and jump over ten-foot tall brick walls like a superhero. He vanished onto rooftops before anyone could stop him.",
+            "Police tried to catch Jack for many years, but they never found him. Some people think he was a rich trickster who wore shoes with secret iron springs in the heels!"
+          ],
+          vocab: [
+            { word: "Cape", pos: "noun", def: "A sleeveless coat that hangs loosely from the shoulders", example: "Superheroes often wear a red cape." },
+            { word: "Leap", pos: "verb", def: "To jump a long way or high into the air", example: "The frog can leap across the puddle." },
+            { word: "Vanished", pos: "verb", def: "Disappeared suddenly and completely", example: "The magician vanished into thin air." },
+            { word: "Heel", pos: "noun", def: "The back part of the human foot below the ankle", example: "The boots had metal plates under the heel." }
+          ],
+          prompts: [
+            "How would you feel if you saw someone jump over a high wall?",
+            "Do you think shoes with real springs in them could work?",
+            "What is your favorite legendary or mysterious character story?"
+          ],
+          quiz: [
+            {
+              q: "How high could Spring-Heeled Jack jump?",
+              options: ["2 inches", "Over 10-foot tall walls", "100 miles"],
+              correct: 1
+            },
+            {
+              q: "Why do some people think Jack could jump so high?",
+              options: ["He used a trampoline", "He had secret springs built into his boots", "He had wings"],
+              correct: 1
+            },
+            {
+              q: "Was Jack ever caught by London police?",
+              options: ["No, never", "Yes, on his first day", "Yes, in 1900"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "mary-celeste",
+        title: "The Mystery of the Mary Celeste",
+        location: "ATLANTIC OCEAN",
+        date: "DECEMBER 5, 1872",
+        photo: "story-mary-celeste.jpg",
+        caption: "The merchant brigantine Mary Celeste floating undamaged but completely deserted in the Atlantic.",
+        factCheck: "True. The ship was found fully seaworthy with six months of food and water, but zero crew aboard.",
+        svgFallbackTitle: "MARY CELESTE GHOST SHIP",
+        standard: {
+          headline: "GHOST SHIP DISCOVERED SAILING FULLY INTACT WITH NO CREW ABOARD!",
+          subdeck: "Merchant Vessel Mary Celeste Found Intact in Atlantic Ocean with Cargo Untouched",
+          body: [
+            "On December 5, 1872, the British brigantine Dei Gratia spotted a merchant ship named Mary Celeste drifting erratically in the Atlantic Ocean between the Azores and Portugal. Captain David Morehouse sent a boarding party to investigate why the vessel was steering so strangely.",
+            "To the sailors' astonishment, the ship was completely deserted. The hull was sturdy, all six months of food supplies and water were untouched, and 1,700 barrels of industrial alcohol were secured in the hold. The single lifeboat was missing, but the crew's personal belongings remained neatly stored.",
+            "No sign of violence, storm damage, or mutiny was ever found. The fate of Captain Benjamin Briggs, his wife, daughter, and seven crew members remains one of maritime history's greatest unsolved mysteries, with theories ranging from alcohol fumes explosion fears to sea monsters."
+          ],
+          vocab: [
+            { word: "Deserted", pos: "adj", def: "Empty of people; abandoned", example: "The old house stood deserted on the edge of town." },
+            { word: "Erratic", pos: "adj", def: "Not even or regular in pattern or movement", example: "The car moved erratically across the icy road." },
+            { word: "Mutiny", pos: "noun", def: "An open rebellion against proper authorities, especially by sailors", example: "The strict captain faced a mutiny by his sailors." },
+            { word: "Seaworthy", pos: "adj", def: "In a good enough condition to safe sail on the sea", example: "Inspectors certified the wooden boat as fully seaworthy." }
+          ],
+          prompts: [
+            "Why do you think Captain Briggs and his crew abandoned a completely undamaged ship?",
+            "How would you investigate a ghost ship if you were the captain finding it at sea?",
+            "Discuss how sea rumors and myths grow over time."
+          ],
+          quiz: [
+            {
+              q: "In what condition was the Mary Celeste when found drifting?",
+              options: ["Sinking and broken in half", "Fully seaworthy with food and water left behind", "On fire"],
+              correct: 1
+            },
+            {
+              q: "What key item was missing from the ship?",
+              options: ["The ship's anchor", "The single lifeboat", "The cargo of alcohol"],
+              correct: 1
+            },
+            {
+              q: "How many crew members and passengers were found aboard?",
+              options: ["10 people", "Zero people", "Only the captain"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A REAL GHOST SHIP FOUND FLOATING ON THE OCEAN WITH NO ONE ON BOARD!",
+          subdeck: "The Mary Celeste Ship Was Full of Food and Water, But the People Were Gone!",
+          body: [
+            "In December 1872, sailors on a sea voyage found a big wooden ship called the Mary Celeste floating silently in the ocean. The ship was moving strangely, so sailors climbed on board to check.",
+            "They were amazed to find no one on the ship! All ten people on board had vanished. But the ship was not broken, and there was plenty of fresh food, water, and warm clothes left behind.",
+            "Only the small lifeboat was missing. No one knows why the captain and crew left a safe ship in the middle of the ocean. It is still one of the biggest mysteries of the sea."
+          ],
+          vocab: [
+            { word: "Sailor", pos: "noun", def: "A person who works on a ship or boat", example: "The brave sailor managed the big sails during the wind." },
+            { word: "Voyage", pos: "noun", def: "A long journey by sea or in space", example: "The ship began its long voyage across the ocean." },
+            { word: "Vanished", pos: "verb", def: "Disappeared completely without a trace", example: "The sun vanished behind the dark clouds." },
+            { word: "Lifeboat", pos: "noun", def: "A small rowboat carried on a ship for emergencies", example: "The crew practiced getting into the lifeboat." }
+          ],
+          prompts: [
+            "Why do you think the crew got into the small lifeboat and left?",
+            "What would you do if you found an empty ship on the water?",
+            "Do you like stories about mysterious ghost ships?"
+          ],
+          quiz: [
+            {
+              q: "Was the ship broken when sailors found it?",
+              options: ["Yes, it was sinking", "No, it was in good shape with food and water", "It had no sails"],
+              correct: 1
+            },
+            {
+              q: "How many people were left on the ship?",
+              options: ["Ten people", "Nobody", "Five sailors"],
+              correct: 1
+            },
+            {
+              q: "What small boat was missing from the ship?",
+              options: ["The lifeboat", "A submarine", "A toy boat"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "spaghetti-tree",
+        title: "The Great BBC Spaghetti Harvest Hoax",
+        location: "LONDON, ENGLAND",
+        date: "APRIL 1, 1957",
+        photo: "story-spaghetti-tree.jpg",
+        caption: "Swiss family picking long noodles directly from branches during the famous April Fools broadcast.",
+        factCheck: "True. The BBC received hundreds of phone calls from viewers asking how to grow their own spaghetti trees.",
+        svgFallbackTitle: "BBC SPAGHETTI HARVEST 1957",
+        standard: {
+          headline: "TELEVISION BROADCAST TRICKS NATION WITH 'SWISS SPAGHETTI HARVEST'!",
+          subdeck: "BBC Broadcasts News Reel Showing Farmers Picking Fresh Pasta Off Tree Branches",
+          body: [
+            "On April Fools' Day in 1957, the highly respected BBC news program 'Panorama' aired a three-minute video report about a bountiful spaghetti harvest in southern Switzerland. Narrated by distinguished broadcaster Richard Dimbleby, the segment showed Swiss peasants plucking long strands of pasta directly from tree branches.",
+            "The reporter explained that mild winter weather and the total elimination of the destructive 'spaghetti weevil' insect had led to an extraordinary crop. Millions of British viewers—at a time when Italian food was considered an exotic luxury in Britain—believed the story completely.",
+            "Hundreds of viewers called the BBC switchboard asking where they could buy their own 'spaghetti tree.' The BBC famously replied: 'Place a sprig of spaghetti in a tin of tomato sauce and hope for the best.' It remains the most famous April Fools joke in broadcast history."
+          ],
+          vocab: [
+            { word: "Hoax", pos: "noun", def: "A humorous or malicious deception", example: "The fake photo of the lake monster was a clever hoax." },
+            { word: "Distinguished", pos: "adj", def: "Successful, authoritative, and commanding great respect", example: "The distinguished scientist received a Nobel Prize." },
+            { word: "Bountiful", pos: "adj", def: "Large in quantity; abundant", example: "The farmers enjoyed a bountiful apple harvest in autumn." },
+            { word: "Exotic", pos: "adj", def: "Originating in or characteristic of a distant foreign country", example: "The shop sold exotic fruits imported from the tropics." }
+          ],
+          prompts: [
+            "Why were British people in 1957 so easily tricked into believing pasta grew on trees?",
+            "What makes a good April Fools joke compared to a harmful lie?",
+            "How does trust in official news sources influence what people believe?"
+          ],
+          quiz: [
+            {
+              q: "What day was the BBC spaghetti harvest report broadcast?",
+              options: ["Christmas Day", "April Fools' Day (April 1)", "Halloween"],
+              correct: 1
+            },
+            {
+              q: "How did the BBC respond when people asked how to grow a spaghetti tree?",
+              options: ["They admitted it was a joke immediately", "They said put spaghetti in a tin of tomato sauce and hope", "They sold seeds"],
+              correct: 1
+            },
+            {
+              q: "Why was pasta unfamiliar to many British viewers in 1957?",
+              options: ["It was banned in Britain", "Italian food was an exotic luxury item at the time", "Pasta was invented in 1960"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "TV NEWS TRICKS PEOPLE INTO THINKING PASTA GROWS ON TREES!",
+          subdeck: "A Famous News Show Shows Farmers Picking Long Spaghetti Strands Off Plants",
+          body: [
+            "On April 1, 1957, a famous TV news program in Britain played a funny April Fools trick on millions of people. They showed a video of family farmers picking cooked spaghetti noodles right off tree branches!",
+            "The news reporter spoke in a serious voice. He said a warm winter made the 'spaghetti trees' grow very well. Back in 1957, many people in Britain had never eaten Italian food and did not know how pasta was made.",
+            "Hundreds of people called the TV station asking how to plant their own spaghetti tree at home! The news company laughed and said: 'Put a stick of spaghetti in a can of tomato sauce and hope for the best!'"
+          ],
+          vocab: [
+            { word: "Noodle", pos: "noun", def: "A long thin piece of pasta food made from flour", example: "I love eating warm chicken noodle soup." },
+            { word: "Trick", pos: "noun", def: "An action done to fool or entertain someone", example: "The magician showed us a fun card trick." },
+            { word: "Harvest", pos: "noun", def: "The process or time of gathering crops from fields", example: "Autumn is the harvest time for pumpkins." },
+            { word: "Plant", pos: "verb", def: "To put seeds in the ground to grow", example: "We will plant tomato seeds in the garden." }
+          ],
+          prompts: [
+            "Did you know how pasta is really made? (From flour and water)",
+            "What is the best April Fools trick you have ever heard?",
+            "Why is it important to check if news videos are real or funny jokes?"
+          ],
+          quiz: [
+            {
+              q: "Does spaghetti really grow on trees?",
+              options: ["Yes, in Switzerland", "No, it is made from flour and water", "Yes, in summer"],
+              correct: 1
+            },
+            {
+              q: "Why did the TV show play this story on April 1st?",
+              options: ["As an April Fools Day joke", "To sell pasta", "By mistake"],
+              correct: 0
+            },
+            {
+              q: "What did viewers do after watching the show?",
+              options: ["They called asking how to grow a tree", "They bought all the sauce", "They threw away their TVs"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "pigeon-camera",
+        title: "The Flying Photographer Pigeons of 1907",
+        location: "KRONBERG, GERMANY",
+        date: "DECEMBER 12, 1907",
+        photo: "story-pigeon-camera.jpg",
+        caption: "A homing pigeon equipped with Dr. Neubronner's miniature dual-lens chest camera.",
+        factCheck: "True. Julius Neubronner patented the miniature pigeon camera in 1908 and won international awards.",
+        svgFallbackTitle: "PIGEON PHOTOGRAPHER 1907",
+        standard: {
+          headline: "GERMAN APOTHECARY PATENTS PIGEON-BORNE AERIAL PHOTOGRAPHY!",
+          subdeck: "Homing Pigeons Equipped with Miniature Timed Cameras Capture Historic Aerial Photos",
+          body: [
+            "In 1907, a German apothecary named Dr. Julius Neubronner used homing pigeons to deliver emergency medicines to a nearby sanatorium. When one pigeon lost its way and arrived four days late, Neubronner was inspired to track his birds' secret flights.",
+            "He engineered a miniature wooden camera weighing less than 2.5 ounces, fitted with a tiny leather harness and a pneumatic clockwork timer to snap photographs automatically every 30 seconds while the bird flew at 40 miles per hour.",
+            "Neubronner's invention produced stunning clear aerial photos of European cities long before airplanes or drones existed. The military quickly recognized the value of pigeon photographers for wartime reconnaissance missions, awarding Neubronner international patents."
+          ],
+          vocab: [
+            { word: "Apothecary", pos: "noun", def: "A historical term for a pharmacist who prepares medicines", example: "The apothecary mixed herb remedies in his small shop." },
+            { word: "Pneumatic", pos: "adj", def: "Operated by air or gas under pressure", example: "The mechanic used a pneumatic drill to fix the wheel." },
+            { word: "Reconnaissance", pos: "noun", def: "Military observation of a region to locate an enemy or survey terrain", example: "Scout planes conducted reconnaissance over the valley." },
+            { word: "Harness", pos: "noun", def: "A set of straps fitted to an animal to fasten equipment", example: "The dog wore a light leather harness during the walk." }
+          ],
+          prompts: [
+            "How do pigeon cameras compare to modern camera drones used today?",
+            "Why were homing pigeons so reliable for carrying messages before radios?",
+            "What other animals have been used by humans to gather information?"
+          ],
+          quiz: [
+            {
+              q: "Why did Dr. Neubronner invent the pigeon camera originally?",
+              options: ["To take fun vacation photos", "To track where his medicine-carrying pigeon went when lost", "To spy on enemy ships"],
+              correct: 1
+            },
+            {
+              q: "How did the tiny camera take photos automatically in mid-air?",
+              options: ["By radio control", "Using a pneumatic clockwork timer", "The pigeon pressed a button"],
+              correct: 1
+            },
+            {
+              q: "How much did the miniature bird camera weigh?",
+              options: ["Under 2.5 ounces", "5 pounds", "10 grams"],
+              correct: 0
+            }
+          ]
+        },
+        easy: {
+          headline: "BIRDS WITH TINY CAMERAS TAKE PICTURES FROM THE SKY!",
+          subdeck: "A Doctor Strap Tiny Timed Cameras onto Pigeons Before Drones Existed",
+          body: [
+            "In 1907, a medicine doctor in Germany used homing pigeons to deliver medicine to sick people. One day, a pigeon got lost for four days! The doctor wanted to know where the bird had gone.",
+            "So, he built a super tiny camera that strapped onto the bird's chest with a small leather vest. The tiny camera had a timer that took photos by itself while the pigeon flew in the air!",
+            "The pictures from the sky showed towns and houses from high above, long before people had drones or airplanes! The doctor won prizes for his smart bird camera."
+          ],
+          vocab: [
+            { word: "Pigeon", pos: "noun", def: "A gray bird known for its ability to find its way home", example: "The pigeon landed on the park bench looking for bread." },
+            { word: "Tiny", pos: "adj", def: "Very small in size", example: "The ant was so tiny it was hard to see." },
+            { word: "Drone", pos: "noun", def: "A flying robot controlled from the ground that takes pictures", example: "He flew a camera drone over the beach." },
+            { word: "Vest", pos: "noun", def: "A small piece of clothing worn on the upper body", example: "The pigeon wore a tiny leather vest for the camera." }
+          ],
+          prompts: [
+            "Would you prefer to use a flying drone or a trained pigeon to take photos?",
+            "How do homing pigeons find their way home without a map?",
+            "What would your school look like from high up in the sky?"
+          ],
+          quiz: [
+            {
+              q: "What animal wore the tiny camera?",
+              options: ["A dog", "A homing pigeon", "A falcon"],
+              correct: 1
+            },
+            {
+              q: "Why did the doctor make the camera?",
+              options: ["To see where his lost pigeon flew", "To make a movie", "To sell toys"],
+              correct: 0
+            },
+            {
+              q: "How did the camera take photos while flying?",
+              options: ["With a tiny air timer", "A person held it", "The bird tapped its beak"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "tokyo-subway-cat",
+        title: "Tama the Stationmaster Cat",
+        location: "KINOKAWA, JAPAN",
+        date: "JANUARY 14, 2007",
+        photo: "story-tokyo-subway-cat.jpg",
+        caption: "Stationmaster Tama wearing her official Wakayama Electric Railway uniform cap at Kishi Station.",
+        factCheck: "True. Tama's appointment increased railway ridership by 17% and generated 1.1 billion yen for the local economy.",
+        svgFallbackTitle: "STATIONMASTER TAMA THE CAT",
+        standard: {
+          headline: "CALICO CAT APPOINTED OFFICIAL TRAIN STATIONMASTER IN JAPAN!",
+          subdeck: "Feline Officer Saves Struggling Rural Railway Line and Boosts Local Tourism by Millions",
+          body: [
+            "In 2006, the struggling Kishigawa train line in Wakayama Prefecture was facing financial ruin and total shutdown due to declining passenger numbers. In a desperate attempt to attract visitors, station owners appointed 'Tama'—a friendly local stray calico cat—as the official Stationmaster of Kishi Station.",
+            "Dressed in a custom-made official railway hat and badge, Tama's official duties were simple: greeting arriving passengers from her refurbished ticket booth office. The public response was sensational; news of the feline stationmaster spread rapidly across Japan and internationally.",
+            "Tourism surged dramatically, increasing annual train passenger traffic by 17% and generating an estimated 1.1 billion yen ($10 million) for the local rural economy. Tama was promoted to 'Executive Vice President' of the railway company before her peaceful passing in 2015."
+          ],
+          vocab: [
+            { word: "Feline", pos: "adj", def: "Relating to or affecting cats", example: "The vet cared for many feline patients at the clinic." },
+            { word: "Surge", pos: "verb", def: "To increase suddenly and powerfully", example: "Ticket sales surged after the concert announcement." },
+            { word: "Refurbish", pos: "verb", def: "To renovate, redecorate, and restore to good condition", example: "They refurbished the historic train car into a cafe." },
+            { word: "Struggling", pos: "adj", def: "Striving to overcome difficulties or financial troubles", example: "The struggling bookstore needed more customers." }
+          ],
+          prompts: [
+            "Why do you think animals in official jobs bring so much joy and interest to communities?",
+            "How can creative ideas help save small towns or businesses from closing down?",
+            "If an animal was in charge of your school or workplace, which animal would be best suited?"
+          ],
+          quiz: [
+            {
+              q: "What official job was given to Tama the cat in 2007?",
+              options: ["Chief Mouse Catcher", "Official Railway Stationmaster", "Train Conductor"],
+              correct: 1
+            },
+            {
+              q: "How did Tama help the Kishigawa train line?",
+              options: ["By catching mice on tracks", "By attracting millions of tourists and boosting ticket sales", "By driving the train"],
+              correct: 1
+            },
+            {
+              q: "What special uniform items did Tama wear?",
+              options: ["A full suit", "A custom official hat and badge", "Red shoes"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A FRIENDLY CAT BECOMES A TRAIN STATION BOSS IN JAPAN!",
+          subdeck: "Tama the Cat Wears a Tiny Official Hat and Saves a Rural Train Line",
+          body: [
+            "In 2007, a small train station in Japan was losing money and almost closed down. Then, the train workers had a fun idea: they made a friendly calico cat named Tama the official Stationmaster!",
+            "Tama was given her own tiny train officer hat and a shiny badge. Her main job was to sit in her window office and meow happily to welcome people getting off the train.",
+            "Thousands of people from around the world came to visit Tama the train cat! She saved the train line from closing and made millions of dollars for the town. She even got promoted to Vice President!"
+          ],
+          vocab: [
+            { word: "Calico", pos: "adj", def: "A cat having coat patches of orange, black, and white fur", example: "The calico cat napped in the warm sun." },
+            { word: "Station", pos: "noun", def: "A stopping place where trains or buses pick up passengers", example: "We waited for the morning train at the station." },
+            { word: "Badge", pos: "noun", def: "A special symbol worn to show rank or position", example: "The police officer wore a bright silver badge." },
+            { word: "Welcome", pos: "verb", def: "To greet someone happily when they arrive", example: "They welcome all new students to the classroom." }
+          ],
+          prompts: [
+            "Would you travel on a train to visit a cat working at a station?",
+            "What other jobs could a friendly pet do to help people?",
+            "Do you prefer cats or dogs?"
+          ],
+          quiz: [
+            {
+              q: "What kind of animal was Stationmaster Tama?",
+              options: ["A dog", "A calico cat", "A rabbit"],
+              correct: 1
+            },
+            {
+              q: "What was Tama's job at the train station?",
+              options: ["To sell tickets", "To greet passengers with a meow", "To clean the floors"],
+              correct: 1
+            },
+            {
+              q: "What happened to the train station after Tama started working?",
+              options: ["It closed down", "Thousands of tourists visited and saved it", "It turned into a park"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "great-stink-1858",
+        title: "The Great Stink of London 1858",
+        location: "LONDON, ENGLAND",
+        date: "JULY 10, 1858",
+        photo: "story-great-stink.jpg",
+        caption: "Political cartoon from 1858 depicting Father Thames giving birth to epidemic disease.",
+        factCheck: "True. Parliament soaked curtains in chloride of lime to block the smell before funding Joseph Bazalgette's sewer system.",
+        svgFallbackTitle: "THE GREAT STINK OF 1858",
+        standard: {
+          headline: "UNBEARABLE SEWAGE FOULNESS SHUTS DOWN BRITISH PARLIAMENT!",
+          subdeck: "Scorching Summer Heat Causes River Thames to Reek, Forcing Historic Engineering Revolution",
+          body: [
+            "During the unusually hot summer of 1858, the River Thames in London became a stagnant open sewer holding centuries of untreated human waste. As temperatures soared above 90 degrees Fahrenheit, the river began to emit a stench so horrifying it was dubbed 'The Great Stink.'",
+            "Inside the nearby Houses of Parliament, politicians attempted to block the odor by soaking window curtains in chloride of lime. When that failed, lawmakers fled the building with handkerchiefs pressed to their faces, unable to conduct government business.",
+            "Realizing that action was urgent, Parliament passed a emergency bill within 18 days to fund engineer Joseph Bazalgette's revolutionary underground sewer system. His masterwork of 1,100 miles of brick sewers cleaned the river and remains the backbone of London's infrastructure today."
+          ],
+          vocab: [
+            { word: "Stagnant", pos: "adj", def: "Not flowing or running, often having an unpleasant smell", example: "Mosquitoes lay eggs in stagnant water ponds." },
+            { word: "Infrastructure", pos: "noun", def: "The basic physical and organizational structures needed for a city (roads, sewers, power)", example: "The city invested in upgrading its water infrastructure." },
+            { word: "Stench", pos: "noun", def: "A distinctive and extremely unpleasant smell", example: "The stench of rotting garbage filled the alley." },
+            { word: "Revolutionary", pos: "adj", def: "Involving or causing complete dramatic change", example: "The smartphone was a revolutionary technological invention." }
+          ],
+          prompts: [
+            "Why does it sometimes take an extreme crisis before leaders pass major public health laws?",
+            "How does proper underground sanitation improve health and lifespan in big cities?",
+            "Imagine living in a historical city before modern plumbing was invented—what challenges would you face?"
+          ],
+          quiz: [
+            {
+              q: "What caused 'The Great Stink' in London in 1858?",
+              options: ["A garbage dump fire", "Untreated sewage in the River Thames cooking in summer heat", "A chemical spill"],
+              correct: 1
+            },
+            {
+              q: "How did politicians in Parliament try to stop the bad smell from coming inside?",
+              options: ["By wearing gas masks", "By soaking window curtains in chemical lime water", "By building a wall"],
+              correct: 1
+            },
+            {
+              q: "What long-term solution was built as a result of the crisis?",
+              options: ["A massive 1,100-mile underground brick sewer network", "A new river channel", "Electric fans along the river"],
+              correct: 0
+            }
+          ]
+        },
+        easy: {
+          headline: "THE GIANT SMELL THAT STOPPED GOVERNMENT IN LONDON!",
+          subdeck: "A Hot Summer Makes the River Smell so Bad That Leaders Have to Run Away",
+          body: [
+            "In the hot summer of 1858, the main river in London, the River Thames, smelled terribly bad! For many years, dirty waste water from the city went straight into the river without being cleaned.",
+            "When the sun made the river hot, the smell became so awful that people called it 'The Great Stink.' Government leaders working near the river had to put scented cloths over their noses and run outside!",
+            "Because the smell was so terrible, leaders quickly spent money to build huge new underground sewer pipes. Engineer Joseph Bazalgette built 1,100 miles of clean pipes underground that fixed the smell forever."
+          ],
+          vocab: [
+            { word: "Smell", pos: "noun", def: "A quality that is perceived by the nose", example: "Freshly baked bread has a wonderful smell." },
+            { word: "Sewer", pos: "noun", def: "An underground pipe used to carry away dirty waste water", example: "Clean water flows through pipes while waste goes to the sewer." },
+            { word: "Awful", pos: "adj", def: "Very bad or unpleasant", example: "The spoiled milk tasted awful." },
+            { word: "Pipe", pos: "noun", def: "A long tube used to carry water or gas", example: "Water flows into the sink through a copper pipe." }
+          ],
+          prompts: [
+            "What is the worst smell you have ever smelled?",
+            "Why is it important for cities to have underground clean water pipes?",
+            "How do hot days make smells worse?"
+          ],
+          quiz: [
+            {
+              q: "Why did the river smell so bad in 1858?",
+              options: ["Hot sun made dirty waste water in the river stink", "Old fish caught on boats", "Poisonous gas"],
+              correct: 0
+            },
+            {
+              q: "What did politicians hold over their faces?",
+              options: ["Handkerchiefs and cloths", "Plastic masks", "Paper bags"],
+              correct: 0
+            },
+            {
+              q: "What was built underground to stop the smell?",
+              options: ["1,100 miles of clean sewer pipes", "A subway train", "A giant basement"],
+              correct: 0
+            }
+          ]
+        }
+      },
+      {
+        id: "clever-hans",
+        title: "Clever Hans: The Math Horse",
+        location: "BERLIN, GERMANY",
+        date: "SEPTEMBER 12, 1904",
+        photo: "story-clever-hans.jpg",
+        caption: "Wilhelm von Osten asks Clever Hans a math problem in front of an amazed crowd in Berlin.",
+        factCheck: "True. Psychologist Oskar Pfungst proved Hans was reading subtle involuntary facial cues from humans.",
+        svgFallbackTitle: "CLEVER HANS THE MATH HORSE",
+        standard: {
+          headline: "HORSE SOLVES COMPLEX ARITHMETIC PROBLEMS BY TAPPING HIS HOOF!",
+          subdeck: "Scientists Baffled as Clever Hans Calculates Fractions, Dates, and Spelling",
+          body: [
+            "In Berlin in 1904, a retired mathematics teacher named Wilhelm von Osten stunned crowds by presenting 'Clever Hans'—an Orlov Trotter horse that could perform complex mathematical calculations. When asked to add, multiply, or calculate fractions, Hans would tap his right hoof on the ground the correct number of times.",
+            "Scientists and animal behavior experts formed an official commission to investigate the claim. They verified that von Osten was not using trick signals or financial fraud; the horse answered correctly even when strangers asked the questions.",
+            "However, psychologist Oskar Pfungst eventually solved the riddle. Hans could not actually do math; instead, he was exceptionally perceptive at reading minute, involuntary body language—such as a slight tense posture or intake of breath—from questioners as he approached the correct number of taps, stopping immediately when the human relaxed."
+          ],
+          vocab: [
+            { word: "Arithmetic", pos: "noun", def: "The branch of mathematics dealing with counting and numbers", example: "Elementary students practice basic arithmetic daily." },
+            { word: "Involuntary", pos: "adj", def: "Done without conscious control or intent", example: "Blinking your eyes is often an involuntary action." },
+            { word: "Perceptive", pos: "adj", def: "Having sensitive insight and keen observation skills", example: "The perceptive detective noticed a single drop of paint." },
+            { word: "Commission", pos: "noun", def: "A group of people officially chosen to investigate something", example: "The government set up a commission to study road safety." }
+          ],
+          prompts: [
+            "How does Clever Hans' story demonstrate how intelligent animals can be in reading human emotion?",
+            "What is the 'Clever Hans Effect' and why must scientists watch out for it during experiments?",
+            "Have you ever noticed your pet reading your facial expressions or body posture?"
+          ],
+          quiz: [
+            {
+              q: "How did Clever Hans give his answers to math questions?",
+              options: ["By whinnying loudly", "By tapping his hoof on the ground", "By pointing with his nose"],
+              correct: 1
+            },
+            {
+              q: "Was Hans actually doing mental math calculations in his head?",
+              options: ["Yes, he was a genius horse", "No, he was reading tiny human body language cues", "No, his owner used hidden wires"],
+              correct: 1
+            },
+            {
+              q: "Who discovered how Hans was actually getting the right answers?",
+              options: ["Psychologist Oskar Pfungst", "The Lord Mayor", "Wilhelm von Osten"],
+              correct: 0
+            }
+          ]
+        },
+        easy: {
+          headline: "THE SMART HORSE THAT COULD DO MATH PROBLEMS!",
+          subdeck: "Clever Hans Taps His Hoof to Solve Addition and Multiplication Questions",
+          body: [
+            "In 1904, a teacher in Germany had a famous horse named 'Clever Hans.' When people asked Hans math questions like 'What is 3 plus 4?', the horse would tap his foot on the ground seven times to give the answer!",
+            "Doctors and scientists came to see the smart horse. They were amazed because Hans got the answers right almost every time, even when total strangers asked the questions.",
+            "Finally, a clever doctor figured out the secret. Hans was not calculating numbers; he was watching people's faces! When Hans tapped his foot near the right number, people leaned forward nervously. When he hit the right answer, people smiled and relaxed, so Hans stopped tapping!"
+          ],
+          vocab: [
+            { word: "Hoof", pos: "noun", def: "The hard tough foot of a horse or cow", example: "The horse tapped its heavy hoof on the barn floor." },
+            { word: "Calculate", pos: "verb", def: "To work out a number using math", example: "Can you calculate 5 times 5 in your head?" },
+            { word: "Posture", pos: "noun", def: "The position in which someone holds their body while sitting or standing", example: "Good posture helps protect your back." },
+            { word: "Secret", pos: "noun", def: "Something hidden or unknown to others", example: "She whispered a fun secret into her friend's ear." }
+          ],
+          prompts: [
+            "Can your pet tell when you are happy or sad by watching your face?",
+            "Why did people believe the horse could really do math?",
+            "What is your favorite trick you have taught an animal?"
+          ],
+          quiz: [
+            {
+              q: "How did the horse show the answer to math questions?",
+              options: ["By tapping his hoof foot", "By writing on a board", "By shaking his head"],
+              correct: 0
+            },
+            {
+              q: "How did Hans really know when to stop tapping?",
+              options: ["He counted in his head", "He watched the human face and body relax", "His owner shouted stop"],
+              correct: 1
+            },
+            {
+              q: "Where did Clever Hans live?",
+              options: ["In London, England", "In Berlin, Germany", "In New York, USA"],
+              correct: 1
+            }
+          ]
+        }
+      },
+      {
+        id: "balloon-hoax",
+        title: "Edgar Allan Poe's Great Balloon Hoax",
+        location: "NEW YORK, USA",
+        date: "APRIL 13, 1844",
+        photo: "story-balloon-hoax.jpg",
+        caption: "New York Sun extra edition reporting the fictitious European hot air balloon ocean transit.",
+        factCheck: "True. Author Edgar Allan Poe wrote the fake news story to trick the New York Sun newspaper readers.",
+        svgFallbackTitle: "THE GREAT BALLOON HOAX 1844",
+        standard: {
+          headline: "HOT AIR BALLOON CROSSES ATLANTIC OCEAN IN THREE DAYS!",
+          subdeck: "New York Newspaper extra Sells Out in Hours Before Author Admits Sensational Hoax",
+          body: [
+            "On April 13, 1844, the New York Sun newspaper published a sensational front-page extra edition with glowing headlines announcing that steering hot air balloon 'Victoria' had successfully crossed the Atlantic Ocean from England to South Carolina in just 75 hours.",
+            "The article contained minute technical details, weather observations, and excerpts from fictitious traveler logs. Thousands of eager readers stormed the newspaper's offices, paying inflated prices to buy copies of the historic aviation news.",
+            "Two days later, the newspaper printed a full retraction, revealing that the story was a complete fabrication written by famed author Edgar Allan Poe. Poe later admitted he created the story to test public gullibility and boost newspaper sales."
+          ],
+          vocab: [
+            { word: "Fabrication", pos: "noun", def: "An invention or lie created to deceive", example: "The rumor about gold was a total fabrication." },
+            { word: "Gullibility", pos: "noun", def: "A tendency to be easily tricked or persuaded to believe something", example: "Scammers take advantage of people's gullibility." },
+            { word: "Retraction", pos: "noun", def: "A public statement withdrawing a previous published report", example: "The magazine printed a retraction after publishing wrong dates." },
+            { word: "Aviation", pos: "noun", def: "The operating of aircraft or flying through the air", example: "Early pioneers made great advances in aviation." }
+          ],
+          prompts: [
+            "Why did technical details in Edgar Allan Poe's story make readers believe it so easily?",
+            "How can readers distinguish between real scientific breakthroughs and clever hoaxes today?",
+            "Should writers be punished for publishing fake news stories, even as creative entertainment?"
+          ],
+          quiz: [
+            {
+              q: "Who was the famous author behind the Great Balloon Hoax of 1844?",
+              options: ["Mark Twain", "Edgar Allan Poe", "Charles Dickens"],
+              correct: 1
+            },
+            {
+              q: "What achievement was claimed in the fake newspaper story?",
+              options: ["A hot air balloon crossed the Atlantic Ocean in 75 hours", "A balloon flew to the moon", "A flying car was built"],
+              correct: 0
+            },
+            {
+              q: "Why did Poe write the fake news story?",
+              options: ["By accident", "To test public gullibility and sell newspapers", "To win a race"],
+              correct: 1
+            }
+          ]
+        },
+        easy: {
+          headline: "A FAKE NEWS STORY SAYS A HOT AIR BALLOON FLEW ACROSS THE OCEAN!",
+          subdeck: "Famous Writer Edgar Allan Poe Tricks Thousands of Newspaper Readers",
+          body: [
+            "In April 1844, a popular newspaper in New York printed a big front-page story: it claimed a hot air balloon had flown all the way across the Atlantic Ocean from England to America in just 3 days!",
+            "Thousands of excited people ran to buy the newspaper to read about the amazing flying machine. The story had lots of small details about winds and engines, so everyone believed it was real.",
+            "Two days later, the writer admitted it was just a made-up story! The famous writer Edgar Allan Poe wrote the trick story to see if people would believe crazy news. It became one of the most famous newspaper pranks in history."
+          ],
+          vocab: [
+            { word: "Balloon", pos: "noun", def: "A large bag filled with hot air or gas to fly in the sky", example: "We saw a colorful hot air balloon high in the sky." },
+            { word: "Prank", pos: "noun", def: "A playful trick or joke played on someone", example: "Playing a harmless prank on April Fools Day can be fun." },
+            { word: "Ocean", pos: "noun", def: "A huge body of salt water covering much of the planet", example: "Ships sail across the Atlantic Ocean." },
+            { word: "Claim", pos: "verb", def: "To say that something is true without proving it yet", example: "He claims he saw a shooting star last night." }
+          ],
+          prompts: [
+            "Why is it easy to believe a story if it has lots of small details?",
+            "Would you like to take a ride in a giant hot air balloon?",
+            "How can we double check if news we read is true?"
+          ],
+          quiz: [
+            {
+              q: "What did the fake newspaper story claim happened?",
+              options: ["A balloon flew across the ocean in 3 days", "A boat sank in the river", "A train broke a speed record"],
+              correct: 0
+            },
+            {
+              q: "Who wrote the trick story?",
+              options: ["Edgar Allan Poe", "A police officer", "A pilot"],
+              correct: 0
+            },
+            {
+              q: "Did people believe the story at first?",
+              options: ["No, no one bought it", "Yes, thousands rushed to buy the paper", "Only children believed it"],
+              correct: 1
+            }
+          ]
+        }
+      }
+    ];
+
+    /* ==========================================================================
+       APP STATE & VARIABLES
+       ========================================================================== */
+    let currentStoryIndex = 0;
+    let currentReadingLevel = 'standard'; // 'standard' or 'easy'
+    let timerInterval = null;
+    let timerSeconds = 120; // 2 minutes
+    let isTimerRunning = false;
+    let synth = window.speechSynthesis;
+    let isSpeaking = false;
+    let quizUserAnswers = {};
+
+    /* ==========================================================================
+       INITIALIZATION
+       ========================================================================== */
+    window.onload = function() {
+      populateStoryDropdown();
+      // Pick a random story on load
+      const randomIndex = Math.floor(Math.random() * STORIES.length);
+      loadStory(randomIndex);
+      
+      // Initialize Audio Context for vintage sound effect on story swap
+      initAudio();
+    };
+
+    function populateStoryDropdown() {
+      const select = document.getElementById('story-select');
+      select.innerHTML = '';
+      STORIES.forEach((story, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx;
+        opt.textContent = `${idx + 1}. ${story.title}`;
+        select.appendChild(opt);
+      });
+    }
+
+    /* ==========================================================================
+       LEVEL SWITCHING LOGIC
+       ========================================================================== */
+    function setReadingLevel(level) {
+      if (currentReadingLevel === level) return;
+      currentReadingLevel = level;
+
+      // Update button styling
+      const stdBtn = document.getElementById('level-btn-standard');
+      const easyBtn = document.getElementById('level-btn-easy');
+
+      if (level === 'easy') {
+        easyBtn.className = "px-2.5 py-1 text-xs font-typewriter font-bold rounded transition-all bg-sepia text-paper";
+        stdBtn.className = "px-2.5 py-1 text-xs font-typewriter font-bold text-ink-light hover:text-ink rounded transition-all";
+      } else {
+        stdBtn.className = "px-2.5 py-1 text-xs font-typewriter font-bold rounded transition-all bg-sepia text-paper";
+        easyBtn.className = "px-2.5 py-1 text-xs font-typewriter font-bold text-ink-light hover:text-ink rounded transition-all";
+      }
+
+      // Reload active story with new level content
+      loadStory(currentStoryIndex);
+    }
+
+    /* ==========================================================================
+       STORY LOADING & DISPLAY LOGIC
+       ========================================================================== */
+    function loadStory(index) {
+      if (isSpeaking) {
+        stopSpeech();
+      }
+
+      currentStoryIndex = index;
+      document.getElementById('story-select').value = index;
+      const story = STORIES[index];
+      const storyData = story[currentReadingLevel];
+
+      // Play paper turnover sound effect
+      playPaperSound();
+
+      // Fade paper effect
+      const paper = document.getElementById('paper-container');
+      paper.style.opacity = '0.3';
+
+      setTimeout(() => {
+        // Headline & Meta
+        document.getElementById('article-headline').innerText = storyData.headline;
+        document.getElementById('article-subdeck').innerText = storyData.subdeck;
+        document.getElementById('article-location').innerText = story.location;
+        document.getElementById('paper-date').innerText = story.date;
+        document.getElementById('article-caption').innerText = story.caption;
+        document.getElementById('article-factcheck').innerText = story.factCheck;
+        document.getElementById('archive-id').innerText = `ARCHIVE-${story.id.toUpperCase()}-${currentReadingLevel.toUpperCase()}`;
+
+        // Load story image using standard relative path
+        const photoFile = story.photo || `${story.id}.jpg`;
+        const photoFrame = document.getElementById('photo-frame');
+
+        photoFrame.innerHTML = `
+          <img id="article-image" 
+               src="${photoFile}" 
+               alt="${story.title}" 
+               class="w-full h-full object-cover vintage-photo-filter transition-opacity duration-300" 
+               onerror="handleImageError(this, '${photoFile}', '${story.svgFallbackTitle || story.title}')">
+          <div class="halftone-overlay"></div>
+        `;
+
+        // Body Text
+        const bodyContainer = document.getElementById('article-body');
+        bodyContainer.innerHTML = '';
+        storyData.body.forEach((para, idx) => {
+          const p = document.createElement('p');
+          if (idx === 0) {
+            p.className = 'drop-cap';
+          }
+          p.innerText = para;
+          bodyContainer.appendChild(p);
+        });
+
+        // Load Classroom Vocabulary
+        renderVocabCards(storyData.vocab);
+
+        // Load Speaking Prompts
+        renderSpeakingPrompts(storyData.prompts);
+
+        // Load Quiz
+        renderQuiz(storyData.quiz);
+
+        // Fade in
+        paper.style.opacity = '1';
+      }, 200);
+    }
+
+    function loadRandomStory() {
+      let nextIdx;
+      do {
+        nextIdx = Math.floor(Math.random() * STORIES.length);
+      } while (nextIdx === currentStoryIndex && STORIES.length > 1);
+      loadStory(nextIdx);
+    }
+
+    function loadSelectedStory(val) {
+      loadStory(parseInt(val, 10));
+    }
+
+    /* Fallback handler if image is missing from directory */
+    function handleImageError(imgTag, fileName, titleText) {
+      if (!fileName) {
+        const story = STORIES[currentStoryIndex];
+        fileName = story.photo;
+        titleText = story.svgFallbackTitle || story.title;
+      }
+      
+      const parent = imgTag.parentElement;
+      parent.innerHTML = `
+        <div class="w-full h-full bg-stone-800 flex flex-col items-center justify-center p-4 text-center border-2 border-stone-600">
+          <i class="fa-solid fa-camera text-paper-accent text-3xl mb-2 opacity-80"></i>
+          <span class="font-headline font-bold text-paper text-sm uppercase tracking-wide leading-tight mb-2">${titleText}</span>
+          <div class="bg-amber-950/80 border border-amber-600/60 px-2 py-1 rounded text-[10px] font-typewriter text-amber-200">
+            <i class="fa-solid fa-file-image mr-1"></i> File expected: <strong class="underline">${fileName}</strong>
+          </div>
+        </div>
+        <div class="halftone-overlay"></div>
+      `;
+    }
+
+    /* ==========================================================================
+       CLASSROOM SPEAKING & LEARNING LAB (VOCAB, PROMPTS, QUIZ)
+       ========================================================================== */
+    function renderVocabCards(vocabList) {
+      const container = document.getElementById('vocab-cards-container');
+      container.innerHTML = '';
+
+      vocabList.forEach((v) => {
+        const card = document.createElement('div');
+        card.className = "bg-paper border-2 border-aged p-3 rounded shadow hover:border-sepia transition cursor-pointer group";
+        
+        card.innerHTML = `
+          <div class="flex items-center justify-between border-b border-aged/50 pb-1 mb-2">
+            <span class="font-headline font-bold text-lg text-ink group-hover:text-sepia">${v.word}</span>
+            <span class="text-[10px] font-typewriter uppercase bg-paper-dark px-1.5 py-0.5 rounded text-sepia font-bold">${v.pos}</span>
+          </div>
+          <p class="text-xs font-body italic text-ink-light mb-2">"${v.def}"</p>
+          <p class="text-[11px] font-typewriter text-sepia bg-paper-dark/50 p-2 rounded border-l-2 border-sepia">
+            <i class="fa-solid fa-quote-left text-[9px] mr-1"></i>${v.example}
+          </p>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function renderSpeakingPrompts(promptsList) {
+      const container = document.getElementById('speaking-prompts-list');
+      container.innerHTML = '';
+
+      promptsList.forEach((prompt, idx) => {
+        const li = document.createElement('li');
+        li.className = "flex items-start gap-3 bg-paper p-3 rounded border border-aged shadow-sm";
+        li.innerHTML = `
+          <span class="bg-sepia text-paper font-typewriter text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+          <span class="font-headline font-semibold text-ink">${prompt}</span>
+        `;
+        container.appendChild(li);
+      });
+    }
+
+    function renderQuiz(quizList) {
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      quizUserAnswers = {};
+      updateQuizScoreBadge(0, quizList.length);
+
+      quizList.forEach((item, qIdx) => {
+        const qBox = document.createElement('div');
+        qBox.className = "bg-paper p-4 rounded border border-aged";
+        
+        let optionsHTML = '';
+        item.options.forEach((opt, oIdx) => {
+          optionsHTML += `
+            <button onclick="checkAnswer(${qIdx}, ${oIdx}, ${item.correct})" id="q${qIdx}-opt${oIdx}" class="w-full text-left font-typewriter text-xs sm:text-sm p-2 rounded border border-aged hover:bg-paper-dark transition flex items-center justify-between">
+              <span>${String.fromCharCode(65 + oIdx)}. ${opt}</span>
+              <i class="fa-regular fa-circle text-stone-400 font-bold" id="q${qIdx}-icon${oIdx}"></i>
+            </button>
+          `;
+        });
+
+        qBox.innerHTML = `
+          <p class="font-headline font-bold text-base text-ink mb-3">${qIdx + 1}. ${item.q}</p>
+          <div class="space-y-2">
+            ${optionsHTML}
+          </div>
+        `;
+
+        container.appendChild(qBox);
+      });
+    }
+
+    function checkAnswer(qIdx, selectedIdx, correctIdx) {
+      const story = STORIES[currentStoryIndex];
+      const quizList = story[currentReadingLevel].quiz;
+
+      if (quizUserAnswers[qIdx] !== undefined) return;
+
+      quizUserAnswers[qIdx] = selectedIdx;
+
+      const isCorrect = selectedIdx === correctIdx;
+      const btn = document.getElementById(`q${qIdx}-opt${selectedIdx}`);
+      const icon = document.getElementById(`q${qIdx}-icon${selectedIdx}`);
+
+      if (isCorrect) {
+        btn.classList.add('bg-emerald-100', 'border-emerald-700', 'text-emerald-900');
+        icon.className = "fa-solid fa-circle-check text-emerald-700 text-base";
+      } else {
+        btn.classList.add('bg-rose-100', 'border-rose-700', 'text-rose-900');
+        icon.className = "fa-solid fa-circle-xmark text-rose-700 text-base";
+        
+        const correctBtn = document.getElementById(`q${qIdx}-opt${correctIdx}`);
+        correctBtn.classList.add('bg-emerald-50', 'border-emerald-600');
+      }
+
+      let score = 0;
+      Object.keys(quizUserAnswers).forEach(q => {
+        if (quizUserAnswers[q] === quizList[q].correct) score++;
+      });
+      updateQuizScoreBadge(score, quizList.length);
+    }
+
+    function updateQuizScoreBadge(score, total) {
+      document.getElementById('quiz-score-badge').innerText = `Score: ${score}/${total}`;
+    }
+
+    /* ==========================================================================
+       TAB SWITCHING LOGIC
+       ========================================================================== */
+    function switchTab(tabName) {
+      const tabs = ['vocab', 'prompts', 'quiz'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const content = document.getElementById(`tab-content-${t}`);
+        if (t === tabName) {
+          btn.className = "px-4 py-2 border-t-2 border-x-2 border-aged bg-paper font-bold text-sepia -mb-0.5 rounded-t";
+          content.classList.remove('hidden');
+        } else {
+          btn.className = "px-4 py-2 border-t-2 border-x-2 border-transparent hover:border-aged bg-paper-dark text-ink-light -mb-0.5 rounded-t";
+          content.classList.add('hidden');
+        }
+      });
+    }
+
+    /* ==========================================================================
+       TEXT TO SPEECH
+       ========================================================================== */
+    function speakArticle() {
+      if (!('speechSynthesis' in window)) {
+        alert("Text-to-Speech is not supported in your browser.");
+        return;
+      }
+
+      if (isSpeaking) {
+        stopSpeech();
+        return;
+      }
+
+      const story = STORIES[currentStoryIndex];
+      const storyData = story[currentReadingLevel];
+      const fullText = `${storyData.headline}. ${storyData.subdeck}. ${storyData.body.join(' ')}`;
+      
+      const utterance = new SpeechSynthesisUtterance(fullText);
+      utterance.rate = currentReadingLevel === 'easy' ? 0.8 : 0.9;
+      utterance.pitch = 1.0;
+
+      utterance.onstart = function() {
+        isSpeaking = true;
+        document.getElementById('tts-label').innerText = "Stop Reading";
+        document.getElementById('tts-btn').classList.replace('bg-sepia', 'bg-rose-800');
+      };
+
+      utterance.onend = function() {
+        stopSpeech();
+      };
+
+      utterance.onerror = function() {
+        stopSpeech();
+      };
+
+      synth.speak(utterance);
+    }
+
+    function stopSpeech() {
+      if (synth) synth.cancel();
+      isSpeaking = false;
+      const label = document.getElementById('tts-label');
+      const btn = document.getElementById('tts-btn');
+      if (label && btn) {
+        label.innerText = "Read Aloud";
+        btn.classList.replace('bg-rose-800', 'bg-sepia');
+      }
+    }
+
+    /* ==========================================================================
+       CLASSROOM TIMER TOOL
+       ========================================================================== */
+    function toggleTimer() {
+      const btn = document.getElementById('timer-btn');
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        btn.innerText = "Start";
+        btn.classList.replace('bg-rose-800', 'bg-aged');
+      } else {
+        isTimerRunning = true;
+        btn.innerText = "Pause";
+        btn.classList.replace('bg-aged', 'bg-rose-800');
+        timerInterval = setInterval(() => {
+          if (timerSeconds > 0) {
+            timerSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            btn.innerText = "Start";
+            playTimerAlarm();
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      timerSeconds = 120;
+      updateTimerDisplay();
+      const btn = document.getElementById('timer-btn');
+      btn.innerText = "Start";
+      btn.classList.replace('bg-rose-800', 'bg-aged');
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(timerSeconds / 60);
+      const secs = timerSeconds % 60;
+      document.getElementById('timer-display').innerText = 
+        `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    /* ==========================================================================
+       WEB AUDIO SYNTHESIS FOR SOUND EFFECTS
+       ========================================================================== */
+    let audioCtx;
+    function initAudio() {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) {
+        audioCtx = new AudioContext();
+      }
+    }
+
+    function playPaperSound() {
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      try {
+        const bufferSize = audioCtx.sampleRate * 0.15;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 800;
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        noise.start();
+      } catch (e) {}
+    }
+
+    function playTimerAlarm() {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.8);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.8);
+      } catch (e) {}
+    }
+  </script>
+
+  <!-- SERVICE WORKER REGISTRATION SCRIPT -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registered successfully:', reg.scope))
+          .catch(err => console.log('Service Worker registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
