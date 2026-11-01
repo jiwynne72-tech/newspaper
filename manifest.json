@@ -1,6 +1,6 @@
 {
-  "name": "Read All About It! - Classroom News Hub",
-  "short_name": "Newspaper Hub",
+  "name": "Read All About It!",
+  "short_name": "NEWS TIME",
   "description": "ESL & Classroom Speaking Newspaper Hub featuring incredible true historical stories, interactive vocabulary, and discussion tools.",
   "start_url": "./index.html",
   "scope": "./",
